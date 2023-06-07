@@ -1,82 +1,58 @@
-# import csv
-# import requests as requests
-# from bs4 import BeautifulSoup
-#
-# # URL to scrape
-# url = 'https://docu.team/mms.php?association=410#'
-# #Send a GET request to the URL
-# response = requests.get(url)
-# soup = BeautifulSoup(response.text, 'html.parser')
-# directory_div = soup.find('div', {'id': 'results', 'class': 'memlist row'})
-# f = open("scrapped.txt", "w")
-# f.write(response.text)
-# f.close()
-# filename = 'hispanic_chamber_data.csv'
-# with open(filename, 'w', newline='', encoding='utf-8') as file:
-#     writer = csv.writer(file)
-#     writer.writerow(['Name', 'Phone', 'Address'])
-#     nested_divs = directory_div.find_all(
-#     'div', {'class': 'card text-center h-100'})
-#     #print(len(nested_divs))
-#     for div_element in nested_divs:
-#         name_element = div_element.find(
-#         'h3', {'class': 'mb-3 text-accent' }) # potentially dont need to add the mb-3, if errors check here
-#         name = name_element.get_text(strip=True)
-#         email = ''
-#         phone = ''
-#
-#         phone_element = div_element.find(
-#             'a', {'class': 'phone'}).get_text(strip = True)
-# # phone = phone_element.find(
-# #     'span', { 'itemprop': 'telephone'}).get_text(strip = True)
-# # email_element = div_element.find(
-# #     'li', {'class': 'gz-card-email'})
-# # email = email_element.find(
-# #     'span', {'itemprop': 'email'}).get_text(strip = True)
-#
-# # Find the <address> tag
-#         address_tag = soup.find('address')
-#         if address_tag:
-#             # Extract the address and remove unnecessary parts
-#             address_tag = address_tag.get_text(strip=True).replace('== $0', '').replace('"', '').strip()
-#
-# # address_element = div_address.find(
-# #     'address', {'class': 'gz-card-email'})
-# # address = address_element.find(
-# #     'span', {'itemprop': 'email'}).get_text(strip = True)
-#         writer.writerow([name, phone_element, address_tag])
-# print("SUCCESS!")
-
 import csv
 import requests
-from bs4 import BeautifulSoup
+import json
+import re
 
-# URL to scrape
-url = 'https://docu.team/mms.php?association=410#'
+# URL of the webpage
+url = "https://docu.team/mms.php?association=410#"
 
 # Send a GET request to the URL
 response = requests.get(url)
-soup = BeautifulSoup(response.text, 'html.parser')
-directory_div = soup.find('div', {'class': 'memlist', 'id': 'results'})
-print(directory_div.prettify())
 
-filename = 'hispanic_chamber_data.csv'
-with open(filename, 'w', newline='', encoding='utf-8') as file:
-    writer = csv.writer(file)
-    writer.writerow(['Name', 'Phone', 'Address'])
+# Check if the request was successful (status code 200)
+if response.status_code == 200:
+    # Extract the JSON file URL using regex
+    pattern = r'var jsonfile\s*=\s*\'([^"]+)\''
+    match = re.search(pattern, response.text)
 
-    # nested_divs = directory_div.find(id="col-lg-4 pb-4 mem")
-    nested_divs = directory_div.find_all('div', {'class': 'col-lg-4 pb-4 mem '})
-    print(len(nested_divs))
-    for div_element in nested_divs:
-        name_element = div_element.find('h3', {'class': 'mb-3 text-accent'})
-        name = name_element.get_text(strip=True)
-        phone_element = div_element.find('a', {'class': 'phone'}).get_text(strip=True)
-        address_tag = div_element.find('address')
-        if address_tag:
-            address = address_tag.get_text(strip=True).replace('== $0', '').replace('"', '').strip()
+    if match:
+        # Extracted JSON file URL
+        json_url = match.group(1)
+
+        # Send a GET request to the JSON file URL
+        json_response = requests.get(json_url)
+
+        # Check if the request was successful (status code 200)
+        if json_response.status_code == 200:
+            # Parse the JSON response
+            json_data = json.loads(json_response.text)
+
+            filename = 'hispanic_chamber_data.csv'
+            with open(filename, 'w', newline='', encoding='utf-8') as file:
+                writer = csv.writer(file)
+                writer.writerow(['Business Name', 'Owner Name', 'Phone', 'Email', 'Address'])
+
+                for key, data in json_data.items():
+                    # Extract relevant information from JSON
+                    business_name = data.get('business_name', '')
+                    first_name = data.get('first_name', '')
+                    last_name = data.get('last_name', '')
+                    phone = data.get('phone', '')
+                    address_1 = data.get('address_1', '')
+                    address_2 = data.get('address_2', '')
+                    city = data.get('city', '')
+                    state = data.get('state_province', '')
+                    zip_code = data.get('zip_postal', '')
+                    email = data.get('email', '')
+                    address = f'{address_1} {address_2}, {city}, {state} {zip_code}'
+                    full_name = f'{first_name} {last_name}'
+
+                    writer.writerow([business_name, full_name, phone, email, address])
+
+            print(f"Data successfully saved to {filename}")
         else:
-            address = ''
-        writer.writerow([name, phone_element, address])
-
-print("SUCCESS!")
+            print("Error: Failed to retrieve the JSON file.")
+    else:
+        print("Error: JSON file URL not found.")
+else:
+    print("Error: Failed to retrieve the webpage.")

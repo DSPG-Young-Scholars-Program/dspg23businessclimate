@@ -17,7 +17,7 @@ f.write(response.text)
 f.close()
 
 file_name = '2021_aacc_data.csv'
-
+#fixed things
 with open(file_name, 'w', newline='', encoding='utf-8') as file:
     writer = csv.writer(file)
 #column titles in csv

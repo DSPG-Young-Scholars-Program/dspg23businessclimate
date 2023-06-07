@@ -69,6 +69,9 @@ with open(file_name, 'w', newline='', encoding='utf-8') as file:
 
 print("SUCCESS!")
 
+#concerns....this code takes childrenlist as a list of lists instead of a list of strings ....not taking each child as a string,
+# only lists strings of child to their span location
+
 
 
 

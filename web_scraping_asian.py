@@ -39,18 +39,21 @@ with open(file_name, 'w', newline='', encoding='utf-8') as file:
         csz_card = address_element.find('div', {'itemprop': 'citystatezip'})
         children = csz_card.findChildren()
         childrenlist = []
-        print(children)
         for child in children:
-            child = (list)
+            child = (list(child))
             childrenlist.append(child)
             print (child)
-            print (str(childrenlist))
+        print (childrenlist)
 
-        c = csz_card.find('span', {'class':'gz-address-city'}).get_text(strip=True)
-        sz = csz_card.find('span',{""}).get_text(strip=True)
-        csz = c + str(sz)
 
-        address = street + ", " + str(csz) #+ str(sz)
+        for item in childrenlist:
+            city = str(childrenlist[0])
+            state = str(childrenlist[1])
+            zip = str(childrenlist[2])
+        print(str(city))
+
+
+        address = street + ", " + str(city) + ", " + str(state) + " " +  str(zip)
 
         phone_card = tel_add.find('li', {'class': 'list-group-item gz-card-phone'})
         phone_element = phone_card.find('a', {'class': 'card-link'})

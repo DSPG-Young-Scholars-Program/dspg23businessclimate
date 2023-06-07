@@ -12,7 +12,7 @@ page = BeautifulSoup(response.text, 'html.parser')
 allresults_div = page.find_all('div', {'class': 'card gz-results-card gz-web-participation-10 gz-no-logo gz-nonsponsor'})
 
 #set up csv file
-f = open("scrapped.txt", "w")
+f = open("scrapped_aacc.txt", "w")
 f.write(response.text)
 f.close()
 

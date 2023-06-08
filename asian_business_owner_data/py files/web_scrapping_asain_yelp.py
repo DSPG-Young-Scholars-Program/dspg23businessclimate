@@ -10,16 +10,9 @@ filename = '../csv data/yelp_asian_data.csv'
 with open(filename, 'a', newline='', encoding='utf-8') as file:
     writer = csv.writer(file)
     writer.writerow(['Business Name', 'URL'])
-
-    for page in i:
-        url = 'https://www.yelp.com/search?find_desc=Asian+Owned+Businesses&find_loc=Fairfax&start=' + str(page)
-
-        response = requests.get(url)
-        soup = BeautifulSoup(response.text, 'html.parser')
-
-        div_elements = soup.find('ul', {'class': 'undefined list__09f24__ynIEd'})
-
-        for div_element in div_elements:
+    name = ''
+    url = ''
+    for div_element in div_elements:
             name_element = div_element.find('span', {'class': 'css-1egxyvc'})
             url_element = div_element.find('a')
 

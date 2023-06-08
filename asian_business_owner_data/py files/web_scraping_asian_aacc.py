@@ -12,11 +12,11 @@ page = BeautifulSoup(response.text, 'html.parser')
 allresults_div = page.find_all('div', {'class': 'card gz-results-card gz-web-participation-10 gz-no-logo gz-nonsponsor'})
 
 #set up csv file
-f = open("scrapped_aacc.txt", "w")
+f = open("../scrap files/scrapped_aacc.txt", "w")
 f.write(response.text)
 f.close()
 
-file_name = '2021_aacc_data.csv'
+file_name = '../csv data/2021_aacc_data.csv'
 #fixed things
 with open(file_name, 'w', newline='', encoding='utf-8') as file:
     writer = csv.writer(file)

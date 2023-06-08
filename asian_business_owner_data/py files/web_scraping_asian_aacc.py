@@ -16,7 +16,7 @@ f = open("../scrap files/scrapped_aacc.txt", "w")
 f.write(response.text)
 f.close()
 
-file_name = '../csv data/2021_aacc_data.csv'
+file_name = '../csv data/aacc_data.csv'
 
 with open(file_name, 'w', newline='', encoding='utf-8') as file:
     writer = csv.writer(file)

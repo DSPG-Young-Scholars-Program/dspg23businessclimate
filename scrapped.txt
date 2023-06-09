@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="apple-touch-icon" sizes="76x76"
+    href="https://docuteam.b-cdn.net/img.php?chamber=410&type=logo&version=5">
+  <link rel="icon" type="image/png"
+    href="https://docuteam.b-cdn.net/img.php?chamber=410&type=logo&version=5">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <title>NOVA - Northern Virginia Hispanic Chamber - Resource Center</title>
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
+    name='viewport' />
+  <meta name="title" content="NOVA - Northern Virginia Hispanic Chamber">
+  <meta name="description" content="Resource Center of NOVA - Northern Virginia Hispanic Chamber">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="docu.team/mms.php?association=410">
+  <meta property="og:title" content="NOVA - Northern Virginia Hispanic Chamber">
+  <meta property="og:description" content="Resource Center of NOVA - Northern Virginia Hispanic Chamber">
+  <!-- Use the background image of the header coming from DocuTeam-->
+      <meta property="og:image"
+      content="https://docuteam.b-cdn.net/img.php?_version=0&association_files=320">
+    <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="docu.team/mms.php?association=410">
+  <meta property="twitter:title" content="NOVA - Northern Virginia Hispanic Chamber">
+  <meta property="twitter:description" content="Resource Center of NOVA - Northern Virginia Hispanic Chamber">
+  <!-- Use the background image of the header coming from DocuTeam-->
+  <meta property="twitter:image" content="https://docuteam.b-cdn.net/img.php?_version=0&parallax_bg=25122&type=img">
+
+
+  <link rel="stylesheet" href="/bs/dist/css/adminlte.min.css">
+  <script src="https://kit.fontawesome.com/a13f1fdfd2.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css"  integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css" integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="/tmpl/welcome/custom.css?v=03092023">
+  <!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-629dcc951e8b5b55"></script>
+
+      <style>
+      body {
+        background-color: #fff;
+      }
+
+      .mainheader {
+        background-image:url(https://docuteam.b-cdn.net/img.php?_version=0&association_files=320);
+      }
+
+      .mainheadercontent {
+        background: transparent;
+      }
+    </style>
+    <style>
+    body {
+      overflow-x: hidden;
+    }
+
+    .accent {
+      background-color:#582E87;
+    }
+
+    .accent_outline {
+      background: transparent;
+      border:1px solid #582E87;
+    }
+
+    .card:hover {
+      box-shadow: none;
+      border: thin solid #ccc;
+    }
+
+    .bg-video {
+      position: absolute;
+      overflow: hidden;
+      width: 100vw;
+      height: 100vh;
+      z-index: 0;
+    }
+
+    .bg-video iframe {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      height: 100%;
+      transform: translate(-50%, -50%);
+    }
+
+    .overlay {
+      z-index: 1;
+      width: 100vw;
+      height: 100vh;
+      background: #00000036;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      position: absolute;
+    }
+
+    @media (min-aspect-ratio: 16/9) {
+      .bg-video iframe {
+        /* height = 100 * (9 / 16) = 56.25 */
+        height: 56.25vw;
+      }
+    }
+
+    @media (max-aspect-ratio: 16/9) {
+      .bg-video iframe {
+        /* width = 100 / (9 / 16) = 177.777777 */
+        width: 177.78vh;
+      }
+    }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+  </script>
+</head>
+
+<body class="layout-top-nav layout-navbar-fixed">
+<div class="wrapper"><link rel="stylesheet" href="/tmpl/mms/directory.css">
+<!-- Mobile Menu -->
+  <nav class="d-block d-lg-none main-header navbar navbar-expand-lg navbar-light bg-white">
+<div class="container">
+  <a class="navbar-brand pr-4 mr-3">
+  <img style="max-height:50px;" src="https://docuteam.b-cdn.net/img.php?chamber=410&type=logo&version=5" alt="NOVA - Northern Virginia Hispanic Chamber">	</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#primaryNav" aria-controls="primaryNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="primaryNav">
+    <ul id="menu-main-menu" class="navbar-nav mx-auto text-center">
+      <li class="nav-item">
+        <a class="nav-link" href="/welcome.php?association=410">Welcome Center</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" href="/directory.php?association=410&catview=1"> Search Marketplace</a>
+      </li>
+            <li class="nav-item">
+        <a class="nav-link" target="_blank"  href="https://www.novahispanicchamber.com/">Community Website</a>
+      </li>
+      
+           <li class="nav-item">
+        <a class="nav-link" href="https://login.docu.team">
+          Member Advertising Login</a>
+    </li>
+            <li class="nav-item">
+      <a class="nav-link" target="_blank"  href="https://mms.novahispanicchamber.com/members/mlogin.php?org_id=NVHC">Members Area Login</a>
+    </li>
+    
+
+  </ul>
+
+    <ul id="menu-main-menu" class="navbar-nav mx-auto">
+    <li class="nav-item">
+  <a  class="nav-link btn btn-xl btn-dark accent border-0" role="button" href="tel:(703) 839-8140">Call Us : (703) 839-8140</a>
+</li>
+</ul>
+    </div>
+  </div>
+</nav>
+
+
+<!-- Desktop Menu -->
+<nav class="d-none d-lg-block main-header navbar navbar-expand-lg navbar-dark p-0 border-0">
+<div class="container-fluid" style="max-width:1600px;">
+  <a class="navbar-brand p-0">
+  <img style="max-height:150px;max-width:150px;" src="https://docuteam.b-cdn.net/img.php?chamber=410&type=logo&version=5" alt="NOVA - Northern Virginia Hispanic Chamber">	</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#primaryNav" aria-controls="primaryNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="primaryNav">
+    <ul id="menu-main-menu" class="navbar-nav mx-auto text-center">
+      <li class="nav-item">
+        <a class="nav-link" href="/welcome.php?association=410">Welcome Center</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" href="/directory.php?association=410"> Search Services</a>
+      </li>
+            <li class="nav-item">
+        <a class="nav-link" target="_blank"  href="https://www.novahispanicchamber.com/">Community Website</a>
+      </li>
+      
+           <li class="nav-item">
+        <a class="nav-link" href="https://login.docu.team">
+          Member Advertising Login</a>
+    </li>
+            <li class="nav-item pl-2">
+      <a class="nav-link" target="_blank"  href="https://mms.novahispanicchamber.com/members/mlogin.php?org_id=NVHC">Members Area Login</a>
+    </li>
+    
+  </ul>
+  <a  class="btn btn-lg btn-dark accent ml-auto border-0" role="button" href="tel:(703) 839-8140">Call Us (703) 839-8140</a>  
+
+      <div style="overflow:hidden;" class="rounded pl-2 align-items-center ml-auto text-center bg-white  d-none d-lg-flex">
+        
+  <small>SCAN FOR <br>MOBILE APP</small>
+        <img style="max-height:100px;" src="/qr.php?type=community_app&amp;chamber=410">
+    </div>
+    </div>
+  </div>
+</nav>
+<div class="mainheader bg-dark">
+        <div class="mainheadercontent">
+            <div class="container py-2 text-center">
+              <h1 class="mb-5 text-white text-strong">Member Directory</h1>
+            </div>
+        </div>
+</div>
+
+<div class="maincontent container pt-5">
+<div id="contentwrapper">
+
+
+<!-- Member Directory Starts -->
+<div class="ondesignsme container">
+        <form class="form-inline" id="searchform">
+          <input type="text" class="form-control" id="keyword" placeholder="Enter Business Name...">
+          <select id="selectNumber" class="form-control shadow-sm" required>
+              <option value="All">Choose Category</option>
+          </select>
+          <input type="submit" value="Search">
+        </form>
+            <ul class="pagination alphabet">
+                <li class="page-item"><a href="#" class="alpha" data-value="A">A</a></li>
+                <li class="page-item"><a href="#" class="alpha" data-value="B">B</a></li>
+                <li class="page-item"><a href="#" class="alpha" data-value="C">C</a></li>
+                <li class="page-item"><a href="#" class="alpha" data-value="D">D</a></li>
+                <li class="page-item"><a href="#" class="alpha" data-value="E">E</a></li>
+                <li class="page-item"><a href="#" class="alpha" data-value="F">F</a></li>
+                <li class="page-item"><a href="#" class="alpha" data-value="G">G</a></li>
+                <li class="page-item"><a href="#" class="alpha" data-value="H">H</a></li>
+                <li class="page-item"><a href="#" class="alpha" data-value="I">I</a></li>
+                <li class="page-item"><a href="#" class="alpha" data-value="J">J</a></li>
+                <li class="page-item"><a href="#" class="alpha" data-value="K">K</a></li>
+                <li class="page-item"><a href="#" class="alpha" data-value="L">L</a></li>
+                <li class="page-item"><a href="#" class="alpha" data-value="M">M</a></li>
+                <li class="page-item"><a href="#" class="alpha" data-value="N">N</a></li>
+                <li class="page-item"><a href="#" class="alpha" data-value="O">O</a></li>
+                <li class="page-item"><a href="#" class="alpha" data-value="P">P</a></li>
+                <li class="page-item"><a href="#" class="alpha" data-value="Q">Q</a></li>
+                <li class="page-item"><a href="#" class="alpha" data-value="R">R</a></li>
+                <li class="page-item"><a href="#" class="alpha" data-value="S">S</a></li>
+                <li class="page-item"><a href="#" class="alpha" data-value="T">T</a></li>
+                <li class="page-item"><a href="#" class="alpha" data-value="U">U</a></li>
+                <li class="page-item"><a href="#" class="alpha" data-value="V">V</a></li>
+                <li class="page-item"><a href="#" class="alpha" data-value="W">W</a></li>
+                <li class="page-item"><a href="#" class="alpha" data-value="X">X</a></li>
+                <li class="page-item"><a href="#" class="alpha" data-value="Y">Y</a></li>
+                <li class="page-item"><a href="#" class="alpha" data-value="Z">Z</a></li>
+            </ul>
+        <hr class="border-bottom mt-3 mb-4">
+        <div class="relativeresults">
+            <div class="loader text-center pt-5">
+                <div class="load-1 mt-5">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </div>Fetching Member Information
+            </div>
+
+            <div class="pb-2 text-center">
+                <h3 id="categorydiv"></h3>
+            </div>
+            <div id="results" class="memlist row"></div>
+        </div>
+    </div>
+  </div>
+<script type="text/javascript">
+var jsonfile = 'https://www.chamberorganizer.com/members/mem_xml/NVHC_members.json';
+</script>
+<script type="text/javascript">
+var showfullname = 'No';
+var columns = '4';
+var ordering = 'random';
+var showurl = 'yes';
+var singlecat = 'All';
+</script>
+<script src="/tmpl/mms/directory.js"></script>
+  
+  
+  <div class="container py-5 sponsorsarea">
+	<div class="text-center">
+		 <div class="col-md-12 text-center mb-3"><h2>The Community Resource Center is Brought to You By:</h2></div>
+           <div class="sponsors">
+    <div>
+    <a href="https://www.novahispanicchamber.com/" target="_blank">
+    <img src="https://docuteam.b-cdn.net/img.php?chamber=410&type=sponsor_banner&version=2" alt="Sponsor" class="" style="max-width:180px;">
+    </a>
+    <small>SPONSOR</small>
+  </div>
+  
+    <div>
+        <a href="https://www.novahispanicchamber.com/ceobootcamp" target="_blank">
+          <img src="https://docuteam.b-cdn.net/img.php?chamber=410&type=sponsor_banner2&version=2" alt="Sponsor" class="" style="max-width:180px;">
+    </a>
+    <small>SPONSOR</small>
+  </div>
+  
+      <div>
+      <a href="https://www.novahispanicchamber.com/foundation" target="_blank">
+    <img src="https://docuteam.b-cdn.net/img.php?chamber=410&type=sponsor_banner3&version=2" alt="Sponsor" class="" style="max-width:180px;">
+    </a>
+    <small>SPONSOR</small>
+  </div>
+  
+      <div>
+      <a href="https://growandprotect.app/novahispanic/" target="_blank">
+  
+  <img src="https://docuteam.b-cdn.net/img.php?chamber=410&type=sponsor_banner4&version=1" alt="Sponsor" class="" style="max-width:180px;">
+    </a>
+    <small>SPONSOR</small>
+  </div>
+  
+
+    <div>
+    <a href="https://mms.novahispanicchamber.com/members/newmem/registration.php?orgcode=NVHC&fmt=M26" target="_blank">
+    <img src="https://docuteam.b-cdn.net/img.php?chamber=410&type=sponsor_banner5&version=2" alt="Sponsor" class="" style="max-width:180px;">
+    </a>
+    <small>SPONSOR</small>
+  </div>
+  
+    
+  </div>
+      <div class="advertisers">
+      
+  
+
+
+
+      
+  </div>
+	</div>
+	</div>
+  </div>
+<div class="pt-5 pb-4 text-center">
+  System Powered By : <a target="_blank" href="https://www.chambernation.com">Chamber Nation</a>
+  <a class="text-underline mx-3" target="_blank" href="https://docu.team/accessibility-statement.html">Accessibility Statement</a>
+<a target="_blank" href="http://www.memberadvertising.com/">Member Support</a>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<script src="/bs/plugins/select2/js/select2.full.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js" integrity="sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<link rel="stylesheet" href="/bs/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
+
+<script type="text/javascript">
+    $(document).ready(function(){
+      $('.sponsors').slick({
+        slidesToShow: 6,
+        autoplay: true,
+        autoplaySpeed: 4000,
+        responsive: [
+          {
+            breakpoint: 600,
+            settings: "unslick"
+          }
+        ]
+      });
+      $('.advertisers').slick({
+              slidesToShow: 6,
+              autoplay: true,
+              autoplaySpeed: 2000,
+              responsive: [
+          {
+            breakpoint: 600,
+            settings: "unslick"
+          }
+        ]
+      });
+    });
+  </script>
+<script>
+$(window).scroll(function() {
+    var scroll = $(window).scrollTop();
+
+    if (scroll >= 150) {
+        $(".navbar-dark").addClass("scrolled shadow");
+    } else {
+        $(".navbar-dark").removeClass("scrolled shadow");
+    }
+});
+</script>
+
+</body>
+</html>

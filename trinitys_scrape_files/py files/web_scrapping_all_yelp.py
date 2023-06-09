@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup
 global url
 
 i = [0,10,20,30,40,50,60,70,80,90,100,110,120,130,140,150,160,170,180,190,200,210,220,230]
-filename = '../csv data/yelp_asian_data.csv'
+filename = '../csv data/yelp_all_data.csv'
 with open(filename, 'a', newline='', encoding='utf-8') as file:
     writer = csv.writer(file)
     run = 0
@@ -18,7 +18,7 @@ with open(filename, 'a', newline='', encoding='utf-8') as file:
         writer.writerow(['Business Name', 'URL'])
 
         for page in i:
-            url = 'https://www.yelp.com/search?find_desc=asian+owned+businesses&find_loc=Fairfax%2C+VA&start=' + str(page)
+            url = 'https://www.yelp.com/search?find_desc=businesses&find_loc=Fairfax%2C+VA&start=' + str(page)
 
             response = requests.get(url)
             soup = BeautifulSoup(response.text, 'html.parser')
@@ -31,6 +31,10 @@ with open(filename, 'a', newline='', encoding='utf-8') as file:
 
                 if name_element is not None and url_element is not None:
                     name = name_element.get_text(strip=True)
+                    for char in name:
+                        if not char.isalpha():
+                            name = name.replace(char, "")
+
                     url = url_element['href']
 
                     writer.writerow([name, url])

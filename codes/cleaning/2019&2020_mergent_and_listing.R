@@ -12,7 +12,7 @@ library(sf)
 library(data.table)
 library(ggplot2)
 library(reshape2)
-#library(crosstable)
+library(crosstable)
 library(tidyr)
 library(scales)
 library(tidygeocoder)
@@ -273,10 +273,10 @@ readr::write_csv(executive_reported, xzfile('data/mergent_intellect_executives/m
 
 # identify small and sole_proprietor companies -----------------------------------------------------------------------
 operation <-  read_csv("data/mergent_and_library/mi_operation.csv.xz") 
+temp_operation <- operation %>%
+  filter(year %in% c(2019,2020)) 
 
-
-
-
+temp_mergent <- merge(temp_operation,mergent_flagged, by='duns')
 
 
 
@@ -285,7 +285,7 @@ operation <-  read_csv("data/mergent_and_library/mi_operation.csv.xz")
 
 
 # descriptive statistics of minority flagged companies ---------------------------------------------------------------
-desc1 <- mergent_flagged %>%
+desc1 <- temp_mergent %>%
   summarise(Description='Listed as minority in MI',
             axle=sum(flag_axle),
             sbsd=sum(flag_sbsd),
@@ -297,7 +297,7 @@ desc1 <- mergent_flagged %>%
             minority_both=mergent_min+listing-mergent_plus_listing,
             Total='')
 
-desc2 <- mergent_flagged %>%
+desc2 <- temp_mergent %>%
   filter(flag_executive_reported==1) %>%
   summarise(Description='Listed as minority with executives reported in MI',
             axle=sum(flag_axle),

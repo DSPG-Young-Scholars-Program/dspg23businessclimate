@@ -23,6 +23,11 @@ library(zipcodeR)
 # 1. load data ----------------------------------------------------------------------------------
 # load the data
 library <- read_csv("data/mergent_and_library/ffxlib_all.csv") %>%
+  mutate(duns=row_number())
+readr::write_csv(library, xzfile('data/mergent_and_library/AtoZ_library.csv.xz', compression = 9))
+
+
+library <- read_csv("data/mergent_and_library/AtoZ_library.csv.xz") %>%
   dplyr::select(company_name=`Business Name`, 
                 address=Address,
                 city=City,

@@ -21,4 +21,4 @@ Steps to use this template:
 
 `git merge template/[branch_to_merge] --allow-unrelated-histories`
 
-When the template is updated, repeat steps 3-5 only.
+When the template is updated, repeat steps 3-5 only. PAY ATTENTION TO CONFLICTING FILE NAMES SO YOU DON'T OVERWRITE YOUR WORK :D.

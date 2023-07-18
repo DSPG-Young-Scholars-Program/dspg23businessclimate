@@ -10,7 +10,7 @@ Steps to use this template:
 
 3. Fetch updates from the template
 
-`git remote fetch --all`
+`git fetch --all`
 
 4. Make necessary changes to the template main branch
   - Reconcile directory structures
@@ -19,6 +19,6 @@ Steps to use this template:
 
 5. Merge the template into your project repository
 
-`git merge template/[branch_to_merge] --allow-unrelated-histories`
+`git merge template/main --allow-unrelated-histories`
 
 When the template is updated, repeat steps 3-5 only. PAY ATTENTION TO CONFLICTING FILE NAMES SO YOU DON'T OVERWRITE YOUR WORK :D.

@@ -12,12 +12,12 @@ library(sf)
 library(data.table)
 library(ggplot2)
 library(reshape2)
+# library(crosstable)
 library(tidyr)
 library(scales)
 library(tidygeocoder)
 library(fuzzyjoin)
 library(zipcodeR)
-library(ggplot2)
 
 
 # 1. load data ----------------------------------------------------------------------------------
@@ -62,6 +62,7 @@ axle_minority <- axle %>%
          address=tolower(address),
          zipcode=as.character(zipcode))
 
+
 # merge the company name within the same city
 mergent_axle_flagged <- NULL
 
@@ -69,11 +70,10 @@ for (x in fairfax_zipcode){
   # subset the two dataset to the same zipcode
   subset_mergent <- mergent %>% filter(zipcode==x) %>% dplyr::select(duns,company_name0,address,city,state,zipcode,flag_mergent)
   subset_axle <- axle_minority %>% filter(zipcode==x) %>% dplyr::select(company_name0,address_axle=address)
+  
+  subset_mergent$pos <- stringdist::amatch(subset_mergent$company_name0,subset_axle$company_name0,method = "lv")
   temp <- subset_mergent %>% 
-    mutate(flag_axle = if_else(company_name0 %in% stringdist::amatch(tolower(company_name0),
-                                                                     tolower(subset_axle$company_name0),
-                                                                     method = "lv"), 1, 0))
-  #%>% left_join(subset_axle[c('company_name0','address_axle')], by='company_name0') 
+    mutate(flag_axle=if_else(!is.na(pos),1,0)) 
   mergent_axle_flagged <- rbind(mergent_axle_flagged,temp)
 }
 
@@ -102,7 +102,7 @@ sbsd_minority <- sbsd %>%
   filter(search==TRUE) %>%
   filter(state=="VA") %>%
   filter(zipcode %in% fairfax_zipcode)
-  
+
 # merge the company name within the same city
 mergent_sbsd_flagged <- NULL
 
@@ -110,10 +110,9 @@ for (x in fairfax_zipcode){
   # subset the two dataset to the same city
   subset_mergent <- mergent %>% filter(zipcode==x) %>% dplyr::select(duns,company_name0,address,zipcode,flag_mergent)
   subset_sbsd <- sbsd_minority %>% filter(zipcode==x) %>% dplyr::select(company_name0,address_sbsd=address)
+  subset_mergent$pos <- stringdist::amatch(subset_mergent$company_name0,subset_sbsd$company_name0,method = "lv")
   temp <- subset_mergent %>% 
-    mutate(flag_sbsd = if_else(company_name0 %in% stringdist::amatch(tolower(company_name0),
-                                                                     tolower(subset_sbsd$company_name0),
-                                                                     method = "lv"), 1, 0))
+    mutate(flag_sbsd=if_else(!is.na(pos),1,0)) 
   #%>% left_join(subset_sbsd[c('company_name0','address_sbsd')], by='company_name0') 
   mergent_sbsd_flagged <- rbind(mergent_sbsd_flagged,temp)
 }
@@ -156,17 +155,17 @@ mergent_chamber1 <- NULL
 for (x in fairfax_zipcode){
   # subset the two dataset to the same zipcode
   subset_mergent <- mergent %>% filter(zipcode==x) %>% dplyr::select(duns,company_name0,address,zipcode,flag_mergent)
-  subset_chamber <- chamber1 %>% filter(zipcode==x) %>% dplyr::select(company_name0,city_yelp=city)
+  subset_chamber1 <- chamber1 %>% filter(zipcode==x) %>% dplyr::select(company_name0,city_yelp=city)
+  subset_mergent$pos <- stringdist::amatch(subset_mergent$company_name0,subset_chamber1$company_name0,method = "lv")
   temp <- subset_mergent %>% 
-    mutate(flag_chamber1 = if_else(company_name0 %in% stringdist::amatch(tolower(company_name0),
-                                                                     tolower(subset_chamber$company_name0),
-                                                                     method = "lv"), 1, 0))
+    mutate(flag_chamber1=if_else(!is.na(pos),1,0)) 
   #%>% left_join(subset_yelp[c('company_name0','city_yelp')], by='company_name0') 
   mergent_chamber1 <- rbind(mergent_chamber1,temp)
 }
 
 mergent_chamber_flagged <- merge(mergent_chamber0, mergent_chamber1[,c('duns','flag_chamber1')], by.x='duns') %>%
   mutate(flag_chamber=flag_chamber0+flag_chamber1)
+
 
 print(paste0('Number of companies flagged as minority by chamber: ', sum(mergent_chamber_flagged$flag_chamber)))
 
@@ -179,13 +178,13 @@ print(paste0('Number of companies flagged as minority by chamber: ', sum(mergent
 #yelp_scrape <- read_csv("data/mergent_intellect_fairfax/yelpmergeffx.csv") %>% dplyr::select(company_name=`Business Name`, address=Address)
 # combine data from yelp api
 yelp_api_blk <- read_csv("data/listings/yelp/yelp_fusion/blk.csv") %>% dplyr::select(company_name=name, city=city, zipcode=zip_code)
-yelp_api_asn <- read_csv("data/listings/yelp/yelp_fusion/blk.csv") %>% dplyr::select(company_name=name, city=city, zipcode=zip_code)
-yelp_api_ltn <- read_csv("data/listings/yelp/yelp_fusion/blk.csv") %>% dplyr::select(company_name=name, city=city, zipcode=zip_code)
+yelp_api_asn <- read_csv("data/listings/yelp/yelp_fusion/asn.csv") %>% dplyr::select(company_name=name, city=city, zipcode=zip_code)
+yelp_api_ltn <- read_csv("data/listings/yelp/yelp_fusion/ltn.csv") %>% dplyr::select(company_name=name, city=city, zipcode=zip_code)
 yelp_api <- rbind(yelp_api_blk,yelp_api_asn,yelp_api_ltn)
 
 # select only compnay from sbsd inside fairfax county based on zipcode
 yelp_minority <- yelp_api %>%
-  mutate(company_name0 = str_remove_all(tolower(company_name), "limited liability company| incorporated| inc| llc"),
+  mutate(company_name0 = str_remove_all(tolower(company_name), "limited liability company| incorporated| inc| llc| - fairfax| - reston station| - falls church| - kw united| - alexandria| cafe"),
          company_name0=gsub("[,.]","",company_name0),
          city=tolower(city)) %>% 
   filter(zipcode %in% fairfax_zipcode)
@@ -193,24 +192,22 @@ yelp_minority <- yelp_api %>%
 # merge the company name within the same city
 mergent_yelp_flagged <- NULL
 
+threshold <- 2  # experiment with different values for the threshold
+
+
 for (x in fairfax_zipcode){
   # subset the two dataset to the same zipcode
   subset_mergent <- mergent[mergent$zipcode==x,] %>% dplyr::select(duns,company_name0,address,zipcode,flag_mergent
-                                                                   )
+  )
   subset_yelp <- yelp_minority[yelp_minority$zipcode==x,] %>% dplyr::select(company_name0,city_yelp=city)
-  
-  # Fuzzy matching using the best type of fuzzy matching (e.g., Levenshtein Distance)
+  subset_mergent$pos <- stringdist::amatch(subset_mergent$company_name0,subset_yelp$company_name0,method = "lv", maxDist = threshold)
   temp <- subset_mergent %>% 
-    mutate(flag_yelp = if_else(company_name0 %in% stringdist::amatch(tolower(company_name0),
-                                                                     tolower(subset_yelp$company_name0),
-                                                                     method = "lv"), 1, 0))
-  
-  #%>% left_join(subset_yelp[c('company_name0','city_yelp')], by='company_name0') 
+    mutate(flag_yelp=if_else(!is.na(pos),1,0)) 
   mergent_yelp_flagged <- rbind(mergent_yelp_flagged,temp)
 }
 
-print(paste0('Number of companies flagged as minority by Yelp: ', sum(mergent_yelp_flagged$flag_yelp)))
 
+print(paste0('Number of companies flagged as minority by Yelp: ', sum(mergent_yelp_flagged$flag_yelp)))
 
 
 
@@ -274,8 +271,8 @@ executive_reported <- executive_reported %>%
          flag_presi_vicepresi=as.numeric(grepl('President',title)))
 
 # save the data
-#readr::write_csv(mergent_flagged, xzfile('data/mergent_and_library/mergent_flagged.csv.xz', compression = 9))
-#readr::write_csv(executive_reported, xzfile('data/mergent_intellect_executives/mergent_executive_flagged.csv.xz', compression = 9))
+readr::write_csv(mergent_flagged, xzfile('data/mergent_and_library/mergent_flagged_fuzzy.csv.xz', compression = 9))
+readr::write_csv(executive_reported, xzfile('data/mergent_intellect_executives/mergent_executive_flagged_fuzzy.csv.xz', compression = 9))
 
 
 
@@ -283,7 +280,8 @@ executive_reported <- executive_reported %>%
 
 
 # identify small and sole_proprietor companies -----------------------------------------------------------------------
-#operation <-  read_csv("data/mergent_and_library/mi_operation.csv.xz") 
+operation <-  read_csv("data/mergent_and_library/mi_operation.csv.xz") 
+
 
 
 # descriptive statistics of minority flagged companies ---------------------------------------------------------------
@@ -314,23 +312,45 @@ desc2 <- mergent_flagged %>%
             minority_both=mergent_min+listing-mergent_plus_listing,
             Total=length(duns))
 
-desc3 <-c('Total number of company', length(axle$company_name), length(sbsd_minority$company_name),length(chamber$company_name),length(yelp_api$company_name),'',length(mergent$company_name),length(mergent$company_name),length(mergent$company_name),'')
-desc <- rbind(desc1,desc2,desc3)
-desc
+#desc3 <-c('Total number of company', length(axle$company_name), length(sbsd_minority$company_name),length(chamber$company_name),length(yelp_api$company_name),0,length(mergent$company_name),length(mergent$company_name),length(mergent$company_name),'')
 
+desc3 <- data.frame(Description = 'Total number of company',
+                    axle = length(axle$company_name),
+                    sbsd = length(sbsd_minority$company_name),
+                    chamber = length(chamber$company_name),
+                    yelp = length(yelp_api$company_name),
+                    listing = length(axle$company_name)+length(sbsd$company_name)+length(chamber$company_name)+length(yelp_api$company_name),
+                    mergent_min = length(mergent$company_name),
+                    mergent_plus_listing = length(mergent$company_name),
+                    minority_both = length(mergent$company_name),
+                    Total = '')
 
+analysis <- data.frame(naics2 = desc1$naics2, naics_name=desc1$naics_name, listing = desc1$listing, mergent_min= desc1$mergent_min)
 
+#desc <- rbind(desc1,desc2,desc3)
 
-# merging mergent_flagged and operations, then creating graph ---------------------------------------------------------------
-#mi_flagged_and_operations <- merge(mergent_flagged, operation, by='duns') 
+# create a graph ---------------------------------------------------------------
+naics <- data.frame(
+  naics_name = c("Agriculture",
+                 "Mining",
+                 "Utilities", "Construction", "Manufacturing", "Wholesale Trade", "Retail", "Transportation", "Information", "Finance", "Real Estate", 
+                 "Tech/Scientific", "Management of Companies", "Waste Management", "Education", "Health Care", "Arts", "Food Services", 
+                  "Public Administration", "Other"),
+  listing = c(1, 0, 2, 55, 14, 20, 27, 17, 15, 39, 8, 349, 1, 72, 15, 48, 3, 49, 0, 51),
+  mergent = c(2, 1, 4, 358, 118, 138, 129, 161, 196, 72, 67, 3450, 12, 930, 115, 129, 29, 75, 0, 96)
+)
 
-#temp <- mi_flagged_and_operations %>% 
-#  select(duns, company_name, year, employment, flag_soleproprietor, flag_small) %>% 
-#  group_by(year) %>%
-#  summarise(small=sum(flag_small),
-  #          business=length(duns),
- #           prop_small=100*small/business)
+#geom_bar(aes(y = mergent, fill = "mergent"), position = "dodge", stat = "identity", width = 0.7)
 
-#ggplot(temp, aes(x=year, y=prop_small)) + geom_bar(stat = "identity")
+# Step 3: Create the bar graph using ggplot2
+ggplot(naics, aes(x = naics_name)) +
+  geom_bar(aes(y = mergent, fill = "mergent"), position = "dodge", stat = "identity", width = 0.7)  +
+  labs(x = "Industry (NAICS Name)", y = "Count") +
+  scale_fill_manual(name = "Category", values = c("mergent" = "black")) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
 
-
+#ggplot(naics, aes(x = naics_name)) +
+ # geom_bar(aes(y = listing, fill = "listing"), position = "dodge", stat = "identity", width = 0.7)  +
+#  labs(x = "Industry (NAICS Name)", y = "Count") +
+ # scale_fill_manual(name = "Category", values = c("listing" = "red")) +
+ # theme(axis.text.x = element_text(angle = 45, hjust = 1))

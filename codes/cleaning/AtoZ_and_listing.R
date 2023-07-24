@@ -34,6 +34,10 @@ library <- read_csv("data/mergent_and_library/AtoZ_library.csv.xz") %>%
                 state=State,
                 zipcode=ZIP)
 
+executive_AtoZ <- library %>% 
+  mutate(library, flag_small = ifelse('Employee Size' > 50, 1, 0)) %>%
+  select('Business Name', Name, Title, duns, flag_small)
+
 # clean AtoZ
 library <- library %>%
   mutate(company_name0 = str_remove_all(tolower(company_name), "limited liability company| incorporated| inc| llc"),
@@ -225,5 +229,5 @@ Desc
 
 # save the data
 readr::write_csv(library_flagged, xzfile('data/mergent_intellect_fairfax/AtoZ_flagged.csv.xz', compression = 9))
-
+readr::write_csv(executive_AtoZ, xzfile('data/mergent_and_library/executive_AtoZ_flagged.csv.xz', compression = 9))
 

@@ -23,11 +23,20 @@ library(zipcodeR)
 # 1. load data ----------------------------------------------------------------------------------
 # load the data
 library <- read_csv("data/mergent_and_library/ffxlib_all.csv") %>%
+  mutate(duns=row_number())
+readr::write_csv(library, xzfile('data/mergent_and_library/AtoZ_library.csv.xz', compression = 9))
+
+
+library <- read_csv("data/mergent_and_library/AtoZ_library.csv.xz") %>%
   dplyr::select(company_name=`Business Name`, 
                 address=Address,
                 city=City,
                 state=State,
                 zipcode=ZIP)
+
+executive_AtoZ <- library %>% 
+  mutate(library, flag_small = ifelse('Employee Size' > 50, 1, 0)) %>%
+  select('Business Name', Name, Title, duns, flag_small)
 
 # clean AtoZ
 library <- library %>%
@@ -220,5 +229,5 @@ Desc
 
 # save the data
 readr::write_csv(library_flagged, xzfile('data/mergent_intellect_fairfax/AtoZ_flagged.csv.xz', compression = 9))
-
+readr::write_csv(executive_AtoZ, xzfile('data/mergent_and_library/executive_AtoZ_flagged.csv.xz', compression = 9))
 

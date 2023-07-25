@@ -1,0 +1,39 @@
+---
+title: "NLP_predictrace"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(predictrace)
+library(dplyr)
+library(readr)
+```
+
+```{r}
+# Load the dataset
+mergent_true_df <- read_csv('../data/mergent_intellect_executives/sample.csv.xz')
+
+# Extract first and last names
+namesdf %>% select(lastname, firstname)
+
+```
+
+```{r}
+# Extract first names into a list
+firstnames_list <- namesdf$firstname
+
+# Extract last names into a list
+lastnames_list <- namesdf$lastname
+```
+```{r}
+predict_race(firstnames_list, probability = FALSE, surname = FALSE)
+```
+
+```{r}
+predict_race(lastnames_list, probability = FALSE)
+```
+

@@ -12,7 +12,7 @@ library(sf)
 library(data.table)
 library(ggplot2)
 library(reshape2)
-# library(crosstable)
+library(crosstable)
 library(tidyr)
 library(scales)
 library(tidygeocoder)
@@ -100,7 +100,7 @@ sbsd_minority <- sbsd %>%
   filter(search==TRUE) %>%
   filter(state=="VA") %>%
   filter(zipcode %in% fairfax_zipcode)
-
+  
 # merge the company name within the same city
 mergent_sbsd_flagged <- NULL
 
@@ -173,8 +173,8 @@ print(paste0('Number of companies flagged as minority by chamber: ', sum(mergent
 #yelp_scrape <- read_csv("data/mergent_intellect_fairfax/yelpmergeffx.csv") %>% dplyr::select(company_name=`Business Name`, address=Address)
 # combine data from yelp api
 yelp_api_blk <- read_csv("data/listings/yelp/yelp_fusion/blk.csv") %>% dplyr::select(company_name=name, city=city, zipcode=zip_code)
-yelp_api_asn <- read_csv("data/listings/yelp/yelp_fusion/asn.csv") %>% dplyr::select(company_name=name, city=city, zipcode=zip_code)
-yelp_api_ltn <- read_csv("data/listings/yelp/yelp_fusion/ltn.csv") %>% dplyr::select(company_name=name, city=city, zipcode=zip_code)
+yelp_api_asn <- read_csv("data/listings/yelp/yelp_fusion/blk.csv") %>% dplyr::select(company_name=name, city=city, zipcode=zip_code)
+yelp_api_ltn <- read_csv("data/listings/yelp/yelp_fusion/blk.csv") %>% dplyr::select(company_name=name, city=city, zipcode=zip_code)
 yelp_api <- rbind(yelp_api_blk,yelp_api_asn,yelp_api_ltn)
 
 # select only compnay from sbsd inside fairfax county based on zipcode
@@ -190,7 +190,7 @@ mergent_yelp_flagged <- NULL
 for (x in fairfax_zipcode){
   # subset the two dataset to the same zipcode
   subset_mergent <- mergent[mergent$zipcode==x,] %>% dplyr::select(duns,company_name0,address,zipcode,flag_mergent
-  )
+                                                                   )
   subset_yelp <- yelp_minority[yelp_minority$zipcode==x,] %>% dplyr::select(company_name0,city_yelp=city)
   temp <- subset_mergent %>% 
     mutate(flag_yelp=if_else(company_name0 %in% unique(subset_yelp$company_name0),1,0)) 
@@ -286,7 +286,6 @@ operation <-  read_csv("data/mergent_and_library/mi_operation.csv.xz")
 
 # descriptive statistics of minority flagged companies ---------------------------------------------------------------
 desc1 <- mergent_flagged %>%
-  group_by(naics2,naics_name) %>%
   summarise(Description='Listed as minority in MI',
             axle=sum(flag_axle),
             sbsd=sum(flag_sbsd),
@@ -299,7 +298,6 @@ desc1 <- mergent_flagged %>%
             Total='')
 
 desc2 <- mergent_flagged %>%
-  group_by(naics2, naics_name) %>%
   filter(flag_executive_reported==1) %>%
   summarise(Description='Listed as minority with executives reported in MI',
             axle=sum(flag_axle),

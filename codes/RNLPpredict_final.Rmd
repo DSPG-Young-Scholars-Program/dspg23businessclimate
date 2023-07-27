@@ -1,0 +1,80 @@
+---
+title: "rethnicity predicition"
+author: "Trinity Chamblin"
+date: "2023-07-27"
+output: html_document
+---
+
+```{r}
+library(rethnicity)
+df = read.csv('~/Documents/DSPG/Data Commons/final_data_v2.csv')
+# Assuming you have already loaded the rethnicity library
+
+# Assuming your existing data frame is named 'df'
+flist = list(df$firstname)
+llist = list(df$lastname)
+
+# Initialize empty vectors to store the results
+x <- vector()
+y <- vector()
+
+# Loop through first names and last names and store them in the vectors
+for (f in flist) {
+  x <- c(x, f)
+}
+
+for (l in llist) {
+  y <- c(y, l)
+}
+
+# Use the rethnicity library to predict ethnicity
+library(rethnicity)
+
+results <- predict_ethnicity(
+  firstnames = x,
+  lastnames = y,
+  method = "fullname",
+  threads = 0,
+  na.rm = TRUE
+)
+
+print(results)
+```
+
+
+```{r}
+# Assuming you have already loaded the required libraries and your data frame is named 'df'
+
+# Create a new data frame 'h' with columns 'firstname' and 'lastname'
+h <- data.frame(
+  firstname = df$firstname,
+  lastname = df$lastname
+)
+
+# Calculate 'white' and 'not_white' columns and add them to 'h'
+h$white <- results$prob_white
+h$not_white <- 1 - h$white
+
+# Initialize a vector to store 'race' values
+race <- c()
+
+# Loop through 'not_white' values and determine 'race' based on the condition
+for (n in h$not_white) {
+  if (n > 0.50) {
+    race <- c(race, 1)
+  } else {
+    race <- c(race, 0)
+  }
+}
+
+# Add the 'race' column to the 'h' data frame
+h$race <- race
+```
+
+
+```{r}
+df$prob_nw_rethn <- h$not_white
+print(df)
+write.csv(df, '~/Documents/DSPG/Data Commons/final_data_v2.csv', row.names=FALSE)
+
+```

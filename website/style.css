@@ -1,0 +1,145 @@
+/* NAVBAR */
+.navbar-header {
+  padding: 0px 15px;
+  max-width: 940px !important;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#navbar {
+  padding: 0px 15px;
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.navbar-default {
+  background-color: #E5E4E2;
+}
+
+.navbar-brand {
+  width: 200px;
+  text-align: right;
+  background-color: #E5E4E2;
+  background-image: url("https://raw.githubusercontent.com/uva-bi-sdad/community/main/logo.svg");
+  background-size: 25px;
+  background-position: center left;
+  background-repeat: no-repeat;
+}
+
+#dspg {
+  margin-left: 15px;
+  margin-top: -10px;
+}
+
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  text-align: left;
+  color: #D04924 !important;
+  background-color: #E5E4E2;
+  font-weight: bold;
+}
+
+a.navbar-brand:hover {
+  color: #000000 !important;
+}
+
+#navbar a {
+  padding: 20% 20% 2;
+}
+
+.dropdown-toggle {
+  background-color: #E5E4E2 !important;
+}
+
+/* LINKS */
+a:hover {
+  color: #000000 !important;
+  background-color: transparent !important;
+}
+
+a {
+  color: #D04924 !important;
+  cursor: pointer;
+}
+
+/* PAGE TITLES AND SUBTITLES  */
+
+h1.title {
+  text-align: center;
+  margin-bottom: -3px;
+  }
+h3.subtitle {
+  text-align: center;
+}
+
+/* SECTION HEADERS AND TEXT  */
+.section_header {
+  font-size: 22px;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 15px;
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+
+h2 {
+  font-size: 22px;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 15px;
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+
+.section_text {
+  font-size: 20px;
+  font-weight: normal;
+  text-align: justify;
+}
+
+/* FIGURE CAPTIONS  */
+figcaption {
+  width: 400px;
+  font-size: 15px;
+  text-align: right;
+  padding: 0px 12px 12px 12px;
+  margin-left: auto;
+}
+
+/* STORY IMAGES */
+.story_image {
+  border: 1px solid #232d4b;
+  box-shadow: 5px 5px 3px lightblue;
+  margin:15px 15px 25px 15px;
+}
+
+/* TUTORIAL */
+.hiddenText {
+  display: none;
+  text-align: left;
+}
+
+.hiddenText img {
+  width: 400px;
+}
+
+/* CODE */
+pre.sourceCode {
+  background-color: #fff
+}
+
+.sourceCode {
+  color: #000;
+}
+
+code span.st{
+  color: rgb(62, 128, 0);
+}
+
+code span.sc{
+  color: rgb(193, 86, 0);
+}
+
+

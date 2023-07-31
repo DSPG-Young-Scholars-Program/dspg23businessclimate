@@ -99,6 +99,24 @@ h2 {
   text-align: justify;
 }
 
+.hero-image {
+    position: relative;
+    margin-bottom: 2em;
+    /* liner gradient tints the image darker for readability*/
+    background-image: url(img/DSPGheader.png); 
+    /*linear-gradient( rgba(0,0,0,.2), rgba(0,0,0,.2) ) */
+    height: 400px;
+    background-size: cover;
+    background-color: #141c25f2;
+    background-position: center center;
+    display: flex; /* Change to `display: none` for no hero image */
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
 /* FIGURE CAPTIONS  */
 figcaption {
   width: 400px;

@@ -250,8 +250,20 @@ $(document).ready(function () {
         <li>
   <a href="index.html">Overview</a>
 </li>
-<li>
-  <a href="data.html">Data</a>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Data
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="data-data-discovery.html">Data Discovery</a>
+    </li>
+    <li>
+      <a href="data-data-agg.html">Data Aggregation</a>
+    </li>
+  </ul>
 </li>
 <li>
   <a href="methods.html">Methods</a>
@@ -264,10 +276,10 @@ $(document).ready(function () {
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="findings-decisiontree.html">Decision Tree</a>
+      <a href="findings-dec-tree.html">Decision Tree</a>
     </li>
     <li>
-      <a href="findings-logisticalregression.html">Logistical Regression</a>
+      <a href="findings-log-regression.html">Logistical Regression</a>
     </li>
     <li>
       <a href="findings-gismap.html">GIS Map</a>

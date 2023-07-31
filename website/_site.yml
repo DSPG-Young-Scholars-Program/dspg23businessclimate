@@ -13,15 +13,19 @@ navbar:
     - text: "Overview"
       href: index.html
     - text: "Data"
-      href: data.html
+      menu:
+        - text: Data Discovery
+          href: data-data-discovery.html
+        - text: Data Aggregation
+          href: data-data-agg.html
     - text: "Methods"
       href: methods.html
     - text: "Findings"
       menu:
         - text: Decision Tree
-          href: findings-decisiontree.html
+          href: findings-dec-tree.html
         - text: Logistical Regression
-          href: findings-logisticalregression.html
+          href: findings-log-regression.html
         - text: GIS Map
           href: findings-gismap.html
         - text: Conclusions

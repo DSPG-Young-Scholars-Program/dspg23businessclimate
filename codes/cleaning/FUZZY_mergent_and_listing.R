@@ -46,9 +46,33 @@ warning_company_name <- unique(tolower(warning_duplicate_name$company_name))
 temp <- search_county('Fairfax','VA')
 fairfax_zipcode <- unique(temp$zipcode)
 
+# finding how many are listed as minority in mergent------------------------------------
 
+# Create an empty data frame to store results
+results_df <- data.frame(zipcode = numeric(),
+                         percent_flagged = numeric(),
+                         stringsAsFactors = FALSE)
 
+# Loop through each Fairfax zipcode
+for (x in fairfax_zipcode) {
+  # Subset the two datasets to the same zipcode
+  eda_mergent <- mergent %>%
+    filter(zipcode == x) %>%
+    dplyr::select(duns, company_name0, address, city, state, zipcode, flag_mergent)
+  
+  # Calculate the percentage of flagged companies
+  total_companies <- nrow(eda_mergent)
+  flagged_companies <- sum(eda_mergent$flag_mergent == 1)
+  percent_flagged <- (flagged_companies / total_companies) * 100
+  
+  # Add the results to the data frame
+  results_df <- rbind(results_df, data.frame(zipcode = x, percent_flagged = percent_flagged))
+}
 
+readr::write_csv(results_df, xzfile('codes/cleaning/FUZZY_zipcodes_data.csv.xz', compression = 9))
+
+# Print the results
+# print(results_df)
 
 # 2. flag axle data --------------------------------------------------------------------------------
 axle <- read_csv("data/axle_data/data_axle_minority_fairfax.csv") %>% 
@@ -354,3 +378,29 @@ ggplot(naics, aes(x = naics_name)) +
 #  labs(x = "Industry (NAICS Name)", y = "Count") +
  # scale_fill_manual(name = "Category", values = c("listing" = "red")) +
  # theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+
+# create a ZIPCODE graph ---------------------------------------------------------------
+# Create an empty data frame to store results
+results_df <- data.frame(zipcode = numeric(),
+                         percent_flagged = numeric(),
+                         stringsAsFactors = FALSE)
+
+# Loop through each Fairfax zipcode
+for (x in fairfax_zipcode) {
+  # Subset the two datasets to the same zipcode
+  eda_listing <- mergent_flagged$flag_listing %>%
+    filter(zipcode == x) %>%
+    dplyr::select(duns, company_name0, address, city, state, zipcode, flag_mergent)
+  
+  # Calculate the percentage of flagged companies
+  total_companies <- nrow(eda_mergent)
+  flagged_companies <- sum(eda_mergent$flag_mergent == 1)
+  percent_flagged <- (flagged_companies / total_companies) * 100
+  
+  # Add the results to the data frame
+  results_df <- rbind(results_df, data.frame(zipcode = x, percent_flagged = percent_flagged))
+}
+
+readr::write_csv(results_df, xzfile('codes/cleaning/FUZZY_listing_zipcodes_data.csv.xz', compression = 9))
+

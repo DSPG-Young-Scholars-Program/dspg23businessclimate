@@ -1,7 +1,9 @@
 ---
-title: "Project Title"
-subtitle: "Data"
+title: "Data Commons: Business CLimate"
+subtitle: "Data Discovery and Aggregation"
 ---
+
+During our data discovery phase, we found business data from the minority-focused Chamber of Commerce websites (Black, Latin, Asian, and Native American), Yelp.com, Small Business Supply Directory (SBSD), and the Axle database. This data holds information such as the business owner's name, company name and address.
 
 
 

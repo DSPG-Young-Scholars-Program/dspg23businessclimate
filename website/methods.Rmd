@@ -29,10 +29,14 @@ subtitle: "Methods"
  
 
 
+
+
 ## Company Name: 
 
    We assessed the languages of the company names in our training set using natural language processing. We created a list of non-minorities spoken languages like English, French, German, etc. and identified companies where the name's language is spoken by a minority group, including Spanish, Arabic, Hindi, etc. To achieve this, we employed three software tools that utilize sources like Google translate to predict the probability of a name in English phonetically resembling a different language. Next, in coherence with the output manipulation of the NLP the same method for assigning each value a binary indicator of 1 (minority) and 0 (non-minority) was utilized as mentioned in the paragraph above.  
 
+ 
+ 
  
 ## Company Location:  
 

@@ -285,9 +285,6 @@ $(document).ready(function () {
       <a href="findings-dec-tree.html">Decision Tree</a>
     </li>
     <li>
-      <a href="findings-log-regression.html">Logistical Regression</a>
-    </li>
-    <li>
       <a href="findings-conclusions.html">Conclusions</a>
     </li>
   </ul>
@@ -325,7 +322,7 @@ $(document).ready(function () {
   .toc-container {
     position: fixed;
     top: 100px; /* Adjust the top position as needed */
-    right: 20px; /* Adjust the right position as needed */
+    left: 20px; /* Adjust the right position as needed */
     width: 200px; /* Adjust the width as needed */
     background-color: #f0f0f0;
     padding: 10px;
@@ -341,7 +338,7 @@ $(document).ready(function () {
   // JavaScript to show/hide the table of contents based on scroll position
   window.addEventListener('scroll', function() {
     var tocContainer = document.querySelector('.toc-container');
-    var headerHeight = 100; // Set the height of your header in pixels
+    var headerHeight = 300; // Set the height of your header in pixels
 
     if (window.pageYOffset > headerHeight) {
       tocContainer.style.visibility = 'visible';
@@ -367,22 +364,21 @@ Table of Contents
 </html>
 <div id="project-background" class="section level3">
 <h3><strong>Project Background</strong></h3>
-<p>The Business Diversity project is a significant part of the Social and Impact Data Commons project. The Data Commons is an open knowledge repository that compiles data from trusted open access sources to provide tools designed to track issues over time and geographical locations. Our project aims to help policy makers and outreach programs track economic diversity—focusing on minority-owned businesses—within Fairfax County, Virginia.</p>
+<p>The Business Diversity project is a significant part of the <a href="https://biocomplexity.virginia.edu/project/social-impact-data-commons">Social and Impact Data Commons</a> project. The Data Commons is an open knowledge repository that compiles data from trusted open access sources to provide tools designed to track issues over time and geographical locations. Our project aims to help policy makers and outreach programs track economic diversity—focusing on minority-owned businesses—within <a href="https://www.fairfaxcounty.gov/topics/about-fairfax-county">Fairfax County, Virginia</a>.</p>
 <div class="definition-box">
 <p><strong>How is a minority-owned business defined?</strong> A minority-owned business is a US-based enterprise predominantly owned (51% or more) by one or more members of a socially and economically disadvantaged minority group based on race.</p>
 </div>
-<div style="overflow: auto;">
-<img src="img/census.png" alt="Fairfax County Census Tracts" style="float: left; margin-right: 20px; width: 50%;">
-<p>
-Microdata enables the study of minority-owned business activities at small geography levels. Current business microdata sources do not adequately identify minority-owned businesses. A case study conducted in Fairfax County revealed that the Annual Business Survey (ABS) reported approximately 38% of minority-owned businesses in 2017. During that same period, Mergent Intellect reported only 7%. Although we do not have Mergent Intellect’s methodology for identifying minority-owned businesses, our preliminary findings suggest that Mergent Intellect includes solely registered minority-owned businesses, underrepresenting those not registered. The inconsistency across these sources leads us to ask these questions
-</p>
+<div class="figure">
+<img src="img/census.png" alt="Fairfax County Census Tracts" />
+<p class="caption">Fairfax County Census Tracts</p>
+</div>
+<p>Microdata enables the study of minority-owned business activities at small geography levels. Current business microdata sources do not adequately identify minority-owned businesses. A case study conducted in Fairfax County revealed that the <a href="https://www.census.gov/programs-surveys/abs/about.html#:~:text=The%20Annual%20Business%20Survey%20(ABS)%20provides%20information%20on%20selected%20economic,%2C%20race%2C%20and%20veteran%20status">Annual Business Survey (ABS)</a>. reported approximately 38% of minority-owned businesses in 2017. During that same period, <a href="https://www.epls.org/340/Mergent-Intellect#:~:text=Mergent%20Intellect%20is%20a%20flexible,to%20generate%20insightful%20business%20intelligence">Mergent Intellect</a>., our primary datasource, reported only 7%. Although we do not have Mergent Intellect’s methodology for identifying minority-owned businesses, our preliminary findings suggest that Mergent Intellect includes solely registered minority-owned businesses, underrepresenting those not registered. The inconsistency across these sources leads us to ask these questions</p>
 <p><strong>Research Questions</strong></p>
 <ul>
 <li>How are minority-owned businesses distributed across Fairfax County geographically?</li>
 <li>How are minority-owned businesses distributed across Fairfax County by business type and by industry?</li>
 </ul>
 <p>The map to the left represents how Fairfax County is split into census tracts.</p>
-</div>
 </div>
 <div id="project-goals" class="section level3">
 <h3><strong>Project Goals</strong></h3>
@@ -392,7 +388,7 @@ Microdata enables the study of minority-owned business activities at small geogr
 <li>The Company’s Name</li>
 <li>The Company’s Location</li>
 </ul>
-<p>We also kept ethical considerations in mind, which is why we decided to employ a binary classification model, and not disclose any business owner's racial identifiers.</p>
+<p>We also kept ethical considerations in mind, which is why we decided to employ a binary <a href="https://medium.com/fuzz/machine-learning-classification-models-3040f71e2529">classification model</a>, and not disclose any business owner's racial identifiers.</p>
 </div>
 <div id="summary-of-findings" class="section level3">
 <h3><strong>Summary of Findings</strong></h3>
@@ -401,7 +397,7 @@ Microdata enables the study of minority-owned business activities at small geogr
 <div id="sponsor-and-stakeholders" class="section level3">
 <h3><strong>Sponsor and Stakeholders</strong></h3>
 <p><img src="img/ffxcounty.png" alt="Fairfax County" /> <img src="img/mastercard.png" alt="Mastercard" /></p>
-<p>This project is sponsored by the Mastercard Center for Inclusive Growth and the stakeholders are the Fairfax County Government. This is one portion of the greater Data Commons project which aims to build an open knowledge repository.</p>
+<p>This project is sponsored by the <a href="https://www.mastercardcenter.org/">Mastercard Center for Inclusive Growth</a> and the stakeholders are the Fairfax County Government Economic Development Authority(<a href="https://www.fairfaxcountyeda.org/" class="uri">https://www.fairfaxcountyeda.org/</a>). This is one portion of the greater Data Commons project which aims to build an open knowledge repository.</p>
 </div>
 <div id="sources" class="section level3">
 <h3><strong>Sources</strong></h3>

@@ -75,7 +75,7 @@ The Business Diversity project is a significant part of the [Social and Impact D
 
 </div>
 
-![Fairfax County Census Tracts](img/census.png)
+![Fairfax County Census Tracts](img/census.png){width=50%}
 
   
   Microdata enables the study of minority-owned business activities at small geography levels. Current business microdata sources do not adequately identify minority-owned businesses. A case study conducted in Fairfax County revealed that the [Annual Business Survey (ABS)](https://www.census.gov/programs-surveys/abs/about.html#:~:text=The%20Annual%20Business%20Survey%20(ABS)%20provides%20information%20on%20selected%20economic,%2C%20race%2C%20and%20veteran%20status). reported approximately 38% of minority-owned businesses in 2017. During that same period, [Mergent Intellect](https://www.epls.org/340/Mergent-Intellect#:~:text=Mergent%20Intellect%20is%20a%20flexible,to%20generate%20insightful%20business%20intelligence)., our primary datasource,  reported only 7%. Although we do not have Mergent Intellect’s methodology for identifying minority-owned businesses, our preliminary findings suggest that Mergent Intellect includes solely registered minority-owned businesses, underrepresenting those not registered. The inconsistency across these sources leads us to ask these questions
@@ -111,7 +111,7 @@ We applied our final classification model to the non-flagged businesses, includi
 ![Fairfax County](img/ffxcounty.png)
 ![Mastercard](img/mastercard.png)
 
-This project is sponsored by the [Mastercard Center for Inclusive Growth](https://www.mastercardcenter.org/) and the stakeholders are the Fairfax County Government Economic Development Authority(https://www.fairfaxcountyeda.org/). This is one portion of the greater Data Commons project which aims to build an open knowledge repository. 
+This project is sponsored by the [Mastercard Center for Inclusive Growth](https://www.mastercardcenter.org/) and the stakeholders are the [Fairfax County Government Economic Development Authority](https://www.fairfaxcountyeda.org/). This is one portion of the greater Data Commons project which aims to build an open knowledge repository. 
 
 ### **Sources** 
 

@@ -27,20 +27,20 @@ plt1 <- ggplot(data = temp2, aes(geometry = geometry, fill = mergent_minority)) 
   geom_sf() +
   scale_y_continuous() +
   scale_fill_gradient2(low='red',
-                       mid='green',
-                       high='blue',
+                       mid='blue',
+                       high='green',
                        aesthetics='fill') +
-  labs(fill='Percentage', x='Latitude', y='Longitude', title='Distribution of minority by tracts (mergent)')
+  labs(fill='Percentage', x='Latitude', y='Longitude', title='Distribution of minority owned businesses by census tracts using MI')
 plt1
 
 plt2 <- ggplot(data = temp2, aes(geometry = geometry, fill = predicted_minority)) +
   geom_sf() +
   scale_y_continuous() +
   scale_fill_gradient2(low='red',
-                       mid='green',
-                       high='blue',
+                       mid='blue',
+                       high='green',
                        aesthetics='fill') +
-  labs(fill='Percentage', x='Latitude', y='Longitude', title='Distribution of minority by tracts (predicted)')
+  labs(fill='Percentage', x='Latitude', y='Longitude', title='Distribution of minority owned businesses by census tracts using classifier')
 plt2
 
 

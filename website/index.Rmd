@@ -81,12 +81,8 @@ The Business Diversity project is a significant part of the Social and Impact Da
   
 **Research Questions**
 
-<div class="definition-box">
-
-**- How are minority-owned businesses distributed across Fairfax County geographically?**  
-**- How are minority-owned businesses distributed across Fairfax County by business type and by industry?**
-</div>
-
+- How are minority-owned businesses distributed across Fairfax County geographically?
+- How are minority-owned businesses distributed across Fairfax County by business type and by industry?
 
 The map to the left represents how Fairfax County is split into census tracts. 
 

@@ -10,3 +10,15 @@ title: "Data Aggregation"
 # talk about how we plan to remove the bias, by looking at the businesses before 1964
 
 
+The prior page details how we found our datasets and some of the descriptive statistic numbers. This page will delve into how exactly we cleaned that data to turn it into the training set for our model. 
+
+The data from the listing had to be cross referenced with 743 companies from Mergent that were minority flagged and had executive names reported to find the places where those had overlapped. 
+
+We used fuzzy matching to cross reference the company names in Mergent intellect and the companies. 
+
+<div class="definition-box">
+
+**What is Fuzzy Matching?**  Fuzzy matching is a data analysis technique used to compare and match two names with slight differences or variations. Unlike exact matching, fuzzy matching allows for flexible comparisons, considering typographical errors and abbreviations. By applying string similarity metrics, fuzzy matching identifies potential matches and enhances data accuracy, data integrity, consistency, and reliability in research outcomes.
+</div>
+
+Overall, the number of businesses found in the listing and the Mergent minority flag was approximately 70. This clearly is a very small number compared to what we began with. The only way to mitigate this issue is to continue web scrapping and develop our listing size to be greater. 

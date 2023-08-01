@@ -1,0 +1,12 @@
+---
+title: "Data Aggregation"
+---
+
+# talk about fuzzy matching to find the overlaps, 
+# give the number of fuzzy matched for each thing. 
+# Then when we had to look at the number with executives reported it became much muhc smaller (70 for  flag_listing)
+
+# talk about our plan (image)
+# talk about how we plan to remove the bias, by looking at the businesses before 1964
+
+

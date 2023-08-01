@@ -6,6 +6,7 @@ output:
     includes:
       in_header: hero-image.html
       in_footer: footer.html
+      css: styles.css
 ---
 
 <!DOCTYPE html>
@@ -67,16 +68,26 @@ output:
 ### **Project Background** 
 The Business Diversity project is a significant part of the Social and Impact Data Commons project. The Data Commons is an open knowledge repository that compiles data from trusted open access sources to provide tools designed to track issues over time and geographical locations. Our project aims to help policy makers and outreach programs track economic diversity—focusing on minority-owned businesses—within Fairfax County, Virginia.
 
-As defined by Mergent intellect and the U.S Census Bureau, a minority-owned business is a US-based enterprise predominantly owned (51% or more) by one or more members of a socially and economically disadvantaged minority group based on race.
 
-Microdata enables the study of minority-owned business activities at small geography levels. This type of data must be accurate upon developing policies at the county and community level. However, current business microdata sources do not adequately identify minority-owned businesses. A case study conducted in Fairfax County revealed that the Annual Business Survey (ABS) reported approximately 38% of minority-owned businesses in 2017. During that same period, Mergent Intellect reported only 7%. Although we do not have Mergent Intellect’s methodology for identifying minority-owned businesses, our preliminary findings suggest that Mergent Intellect includes solely registered minority-owned businesses, underrepresenting those not registered. The inconsistency across these sources leads us to ask these questions:
+<div class="definition-box">
 
+**How is a minority-owned business defined?**  A minority-owned business is a US-based enterprise predominantly owned (51% or more) by one or more members of a socially and economically disadvantaged minority group based on race.
 
+</div>
 
-### **Research Questions**
+<div style="overflow: auto;">
+  <img src="img/census.png" alt="Fairfax County Census Tracts" style="float: left; margin-right: 20px; width: 50%;">
+  <p>Microdata enables the study of minority-owned business activities at small geography levels. Current business microdata sources do not adequately identify minority-owned businesses. A case study conducted in Fairfax County revealed that the Annual Business Survey (ABS) reported approximately 38% of minority-owned businesses in 2017. During that same period, Mergent Intellect reported only 7%. Although we do not have Mergent Intellect’s methodology for identifying minority-owned businesses, our preliminary findings suggest that Mergent Intellect includes solely registered minority-owned businesses, underrepresenting those not registered. The inconsistency across these sources leads us to ask these questions</p>
+  
+**Research Questions**
 
 - How are minority-owned businesses distributed across Fairfax County geographically?
 - How are minority-owned businesses distributed across Fairfax County by business type and by industry?
+
+The map to the left represents how Fairfax County is split into census tracts. 
+
+</div>
+
 
 
 
@@ -95,15 +106,12 @@ We also kept ethical considerations in mind, which is why we decided to employ a
 We applied our final classification model to the non-flagged businesses, including the businesses that were correctly listed as minority owned. By doing this, we increased the reported percentage of minority-owned businesses for Mergent Intellect, to 48.27%.  We also reduced the error of misclassified businesses by Mergent Intellect by 12%. 
 
 
-
 ### **Sponsor and Stakeholders** 
 
 ![Fairfax County](img/ffxcounty.png)
 ![Mastercard](img/mastercard.png)
 
 This project is sponsored by the Mastercard Center for Inclusive Growth and the stakeholders are the Fairfax County Government. This is one portion of the greater Data Commons project which aims to build an open knowledge repository. 
-
-
 
 ### **Sources** 
 

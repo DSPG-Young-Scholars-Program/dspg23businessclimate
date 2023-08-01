@@ -1,5 +1,6 @@
 ---
 title: "Conclusions"
+
 ---
   Throughout our research, we experienced several limitations and challenges. One challenge was our inability to produce an extensive list of businesses despite web scraping from various sites. This resulted in a smaller list of businesses compared to our main sources. To mitigate this challenge, we carefully balanced the training set, ensuring it comprised 50% of businesses included in the listings and 50% not included. This allowed for a balanced training set, but it is still smaller than it should be. A future application of this project would be to continue searching for more businesses to add to our listing so that the model’s training set can be improved. Additionally, we acknowledge a potential limitation in our approach, wherein census demographic information is based on the number of people living in a particular area. By using this data to infer information about business owners' locations, we assumed they reside in the same area as their businesses are. 
 

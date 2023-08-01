@@ -55,6 +55,7 @@ output:
 [Research Questions](#research-questions)
 [Project Goals](#project-goals)
 [Summary of Findings](#summary-of-findings)
+[Conclusions](#conclusions)
 [Sponsor and Stakeholders](#sponsor-and-stakeholders)
 [Sources](#sources)
 
@@ -77,12 +78,14 @@ The Business Diversity project is a significant part of the Social and Impact Da
 
 <div style="overflow: auto;">
   <img src="img/census.png" alt="Fairfax County Census Tracts" style="float: left; margin-right: 20px; width: 50%;">
-  <p>Microdata enables the study of minority-owned business activities at small geography levels. This type of data must be accurate upon developing policies at the county and community level. However, current business microdata sources do not adequately identify minority-owned businesses. A case study conducted in Fairfax County revealed that the Annual Business Survey (ABS) reported approximately 38% of minority-owned businesses in 2017. During that same period, Mergent Intellect reported only 7%. Although we do not have Mergent Intellect’s methodology for identifying minority-owned businesses, our preliminary findings suggest that Mergent Intellect includes solely registered minority-owned businesses, underrepresenting those not registered. The inconsistency across these sources leads us to ask these questions:</p>
+  <p>Microdata enables the study of minority-owned business activities at small geography levels. Current business microdata sources do not adequately identify minority-owned businesses. A case study conducted in Fairfax County revealed that the Annual Business Survey (ABS) reported approximately 38% of minority-owned businesses in 2017. During that same period, Mergent Intellect reported only 7%. Although we do not have Mergent Intellect’s methodology for identifying minority-owned businesses, our preliminary findings suggest that Mergent Intellect includes solely registered minority-owned businesses, underrepresenting those not registered. The inconsistency across these sources leads us to ask these questions</p>
   
-***Research Questions***
+**Research Questions**
 
 - How are minority-owned businesses distributed across Fairfax County geographically?
 - How are minority-owned businesses distributed across Fairfax County by business type and by industry?
+
+The map to the left represents how Fairfax County is split into census tracts. 
 
 </div>
 
@@ -103,6 +106,12 @@ We also kept ethical considerations in mind, which is why we decided to employ a
 ### **Summary of Findings**
 We applied our final classification model to the non-flagged businesses, including the businesses that were correctly listed as minority owned. By doing this, we increased the reported percentage of minority-owned businesses for Mergent Intellect, to 48.27%.  We also reduced the error of misclassified businesses by Mergent Intellect by 12%. 
 
+### **Conclusions**
+Throughout our research, we experienced several limitations and challenges. One challenge was our inability to produce an extensive list of businesses despite web scraping from various sites. This resulted in a smaller list of businesses compared to our main sources. To mitigate this challenge, we carefully balanced the training set, ensuring it comprised 50% of businesses included in the listings and 50% not included. This allowed for a balanced training set, but it is still smaller than it should be. A future application of this project would be to continue searching for more businesses to add to our listing so that the model’s training set can be improved. Additionally, we acknowledge a potential limitation in our approach, wherein census demographic information is based on the number of people living in a particular area. By using this data to infer information about business owners' locations, we assumed they reside in the same area as their businesses are. 
+
+We hope that with this model, community programs and policymakers across the entire National Capital Region can foster healthier and more diverse business climates within their communities by using accurate information to help encourage initiatives for underserved businesses. These improvements would not only help better our economy but promote representation for underserved groups and prioritize inclusion for all. 
+
+
 
 
 ### **Sponsor and Stakeholders** 
@@ -111,8 +120,6 @@ We applied our final classification model to the non-flagged businesses, includi
 ![Mastercard](img/mastercard.png)
 
 This project is sponsored by the Mastercard Center for Inclusive Growth and the stakeholders are the Fairfax County Government. This is one portion of the greater Data Commons project which aims to build an open knowledge repository. 
-
-
 
 ### **Sources** 
 

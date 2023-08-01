@@ -1,8 +1,8 @@
 ---
-title: "Project Title"
-subtitle: "Findings Overview"
+title: "GIS Map"
 ---
 
-# Overview of findings
+Using the decision tree classifier model a GIS map of Fairfax County was created. This map represents the percentage of minority-owned business per census tract. The two maps represent the number of minority owned businesses according to the Mergent Intellect database before and after the model was applied. By looking at these GIS maps, one can visualize how minority businesses are distributed across Fairfax County. 
 
-In the past students have used this page as a presentation aid
+![](img/premodel.png){width=40% }
+![](img/postmodel.png){width=40% }

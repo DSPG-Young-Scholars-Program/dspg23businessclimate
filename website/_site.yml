@@ -26,8 +26,6 @@ navbar:
           href: findings-dec-tree.html
         - text: Logistical Regression
           href: findings-log-regression.html
-        - text: GIS Map
-          href: findings-gismap.html
         - text: Conclusions
           href: findings-conclusions.html
     - text: "Team"

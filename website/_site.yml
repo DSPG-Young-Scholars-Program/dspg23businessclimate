@@ -24,8 +24,6 @@ navbar:
       menu:
         - text: Decision Tree
           href: findings-dec-tree.html
-        - text: Logistical Regression
-          href: findings-log-regression.html
         - text: Conclusions
           href: findings-conclusions.html
     - text: "Team"

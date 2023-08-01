@@ -16,6 +16,7 @@ We used fuzzy matching to cross reference the company names in Mergent intellect
 
 Overall, the number of businesses found in the listing and the Mergent minority flag was approximately 70. This clearly is a very small number compared to what we began with. The only way to mitigate this issue is to continue web scrapping and develop our listing size to be greater. 
 
+![Cross Referenced](img/crossref.png)
 
 The term ‘In-Listing’ is used as a proxy for ‘minority-owned’ to reduce bias. This bias could exist because although we have high confidence that businesses in the Listing are minority-owned, we do not have confidence that businesses not in the Listing are not minority-owned. 
 
@@ -32,5 +33,7 @@ Using this method once again limited our training set. The number of businesses 
 This indicates a relatively small training set, and as mentioned before the only way to improve this dataset is by increasing the size of the data gathered. 
 
 Using 1964 as a benchmark means we are using an exogenous event in the world to find a benchmark. This resulted in a smaller dataset. If we were to use a benchmark that is endogenous to our dataset we would use the year 1990 as a benchmark because as seen in our dataset there is a large jump in the number of businesses reported that year. If we were to use that year, then we could have a much larger datset. Doing this is a further application of our research and would be interesting to explore. 
+
+
 
 

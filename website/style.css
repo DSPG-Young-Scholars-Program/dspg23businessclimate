@@ -84,6 +84,15 @@ h3.subtitle {
   margin-bottom: 15px;
 }
 
+/* Define the style for the definition box */
+.definition-box {
+  background-color: #f0f0f0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
 h2 {
   font-size: 22px;
   text-align: center;

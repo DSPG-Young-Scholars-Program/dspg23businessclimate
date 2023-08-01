@@ -11,7 +11,7 @@
 
 
 
-<title>Data Commons: Business CLimate</title>
+<title>Conclusions</title>
 
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -258,10 +258,10 @@ $(document).ready(function () {
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="data-data-discovery.html">Data Discovery</a>
+      <a href="data-discovery.html">Data Discovery</a>
     </li>
     <li>
-      <a href="data-data-agg.html">Data Aggregation</a>
+      <a href="data-agg.html">Data Aggregation</a>
     </li>
   </ul>
 </li>
@@ -277,12 +277,6 @@ $(document).ready(function () {
   <ul class="dropdown-menu" role="menu">
     <li>
       <a href="findings-dec-tree.html">Decision Tree</a>
-    </li>
-    <li>
-      <a href="findings-log-regression.html">Logistical Regression</a>
-    </li>
-    <li>
-      <a href="findings-gismap.html">GIS Map</a>
     </li>
     <li>
       <a href="findings-conclusions.html">Conclusions</a>
@@ -308,13 +302,24 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Data Commons: Business CLimate</h1>
-<h3 class="subtitle">Data Discovery and Aggregation</h3>
+<h1 class="title toc-ignore">Conclusions</h1>
 
 </div>
 
 
-<p>During our data discovery phase, we found business data from the minority-focused Chamber of Commerce websites (Black, Latin, Asian, and Native American), Yelp.com, Small Business Supply Directory (SBSD), and the Axle database. This data holds information such as the business owner's name, company name and address.</p>
+<div id="limitations" class="section level3">
+<h3><strong>Limitations</strong></h3>
+<p>Throughout our research, we experienced several limitations and challenges. One challenge was our inability to produce an extensive list of businesses despite web scraping from various sites. This resulted in a smaller list of businesses compared to our main sources. To mitigate this challenge, we carefully balanced the training set, ensuring it comprised 50% of businesses included in the listings and 50% not included. This allowed for a balanced training set, but it is still smaller than it should be. A future application of this project would be to continue searching for more businesses to add to our listing so that the model’s training set can be improved. Additionally, we acknowledge a potential limitation in our approach, wherein census demographic information is based on the number of people living in a particular area. By using this data to infer information about business owners' locations, we assumed they reside in the same area as their businesses are.</p>
+</div>
+<div id="next-steps" class="section level3">
+<h3><strong>Next Steps </strong></h3>
+<p>The next steps of this would be to grow our Listing and our data sets to gain more confidence in our model. Once that is possible, we would use multiple success measurements on our model, such as Precision, Accuracy, F1 Score, and ROC.</p>
+<p>We also would explore more NLP packages and different types of classifier models.</p>
+</div>
+<div id="project-background" class="section level3">
+<h3><strong>Project Background</strong></h3>
+<p>We hope that with this model, community programs and policymakers across the entire National Capital Region can foster healthier and more diverse business climates within their communities by using accurate information to help encourage initiatives for underserved businesses. These improvements would not only help better our economy but promote representation for underserved groups and prioritize inclusion for all.</p>
+</div>
 
 <hr />
 <div>

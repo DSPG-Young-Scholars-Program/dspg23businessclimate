@@ -11,7 +11,7 @@
 
 
 
-<title>Project Title</title>
+<title>Data Aggregation</title>
 
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -258,10 +258,10 @@ $(document).ready(function () {
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="data-data-discovery.html">Data Discovery</a>
+      <a href="data-discovery.html">Data Discovery</a>
     </li>
     <li>
-      <a href="data-data-agg.html">Data Aggregation</a>
+      <a href="data-agg.html">Data Aggregation</a>
     </li>
   </ul>
 </li>
@@ -277,12 +277,6 @@ $(document).ready(function () {
   <ul class="dropdown-menu" role="menu">
     <li>
       <a href="findings-dec-tree.html">Decision Tree</a>
-    </li>
-    <li>
-      <a href="findings-log-regression.html">Logistical Regression</a>
-    </li>
-    <li>
-      <a href="findings-gismap.html">GIS Map</a>
     </li>
     <li>
       <a href="findings-conclusions.html">Conclusions</a>
@@ -308,16 +302,32 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Project Title</h1>
-<h3 class="subtitle">Findings Overview</h3>
+<h1 class="title toc-ignore">Data Aggregation</h1>
 
 </div>
 
 
-<div id="overview-of-findings" class="section level1">
-<h1>Overview of findings</h1>
-<p>In the past students have used this page as a presentation aid</p>
+<p>The prior page details how we found our datasets and some of the descriptive statistic numbers. This page will delve into how exactly we cleaned that data to turn it into the training set for our model.</p>
+<p>The data from the listing had to be cross referenced with 743 companies from Mergent that were minority flagged and had executive names reported to find the places where those had overlapped.</p>
+<p>We used fuzzy matching to cross reference the company names in Mergent intellect and the companies.</p>
+<div class="definition-box">
+<p><strong>What is Fuzzy Matching?</strong> Fuzzy matching is a data analysis technique used to compare and match two names with slight differences or variations. Unlike exact matching, fuzzy matching allows for flexible comparisons, considering typographical errors and abbreviations. By applying string similarity metrics, fuzzy matching identifies potential matches and enhances data accuracy, data integrity, consistency, and reliability in research outcomes.</p>
 </div>
+<p>Overall, the number of businesses found in the listing and the Mergent minority flag was approximately 70. This clearly is a very small number compared to what we began with. The only way to mitigate this issue is to continue web scrapping and develop our listing size to be greater.</p>
+<div class="figure">
+<img src="img/crossref.png" alt="Cross Referenced" />
+<p class="caption">Cross Referenced</p>
+</div>
+<p>The term ‘In-Listing’ is used as a proxy for ‘minority-owned’ to reduce bias. This bias could exist because although we have high confidence that businesses in the Listing are minority-owned, we do not have confidence that businesses not in the Listing are not minority-owned.</p>
+<p>To reduce the bias that exists in the 'non-Listing' companies, we compiled a list of businesses founded before 1964. This is because the Civil Rights Act was implemented in 1964; businesses established before this date are more likely to be non-minority owned. According to <a href="https://storymaps.arcgis.com/stories/f74a8fbad837435b8e901cc9c04aa345">Census Data</a>, the population of non-minorities in Fairfax County in 1964 was approximately 90%, as opposed to around 50% in 2017. After finding the unique businesses labelled as ‘In-Listing,’ we extracted the same number of businesses classified as ‘non-Listing.’</p>
+<p>The way our training set was created is shown below.</p>
+<div class="figure">
+<img src="img/training.png" alt="Training Set" />
+<p class="caption">Training Set</p>
+</div>
+<p>Using this method once again limited our training set. The number of businesses reported by Mergent Intellect with founding years prior to 1964 were only 108. Because the training set has to be entirely balanced (50% minority and 50% non minorities), we could only use a random set of 108 names from the minority business owners as well.</p>
+<p>This indicates a relatively small training set, and as mentioned before the only way to improve this dataset is by increasing the size of the data gathered.</p>
+<p>Using 1964 as a benchmark means we are using an exogenous event in the world to find a benchmark. This resulted in a smaller dataset. If we were to use a benchmark that is endogenous to our dataset we would use the year 1990 as a benchmark because as seen in our dataset there is a large jump in the number of businesses reported that year. If we were to use that year, then we could have a much larger datset. Doing this is a further application of our research and would be interesting to explore.</p>
 
 <hr />
 <div>

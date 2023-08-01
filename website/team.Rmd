@@ -3,8 +3,33 @@ title: "Project Title"
 subtitle: "Team"
 ---
 
-# Mention yourselves
+### Who We Are
+#### [The Data Science for the Public Good (DSPG) Young Scholars Program](https://biocomplexity.virginia.edu/institute/divisions/social-and-decision-analytics/dspg)
+Our program is brought to you by the University of Virginia's Biocomplexity Institute's [Social and Decision Analytics Division](https://biocomplexity.virginia.edu/institute/divisions/social-and-decision-analytics) (SDAD). DSPG is a 10 week summer program for undergraduate and graduate students from across the country. DSPG Young Scholars conduct research at the intersection of statistics, computation, engineering, science and the social sciences to determine how information generated within communities and through local, state, and federal programs can be leveraged to improve quality of life and inform public policy. 
 
-# Mention the SDAD faculty
+### Our Project Team
+# DSPG Members:
 
-# Mention your sponsors
+Anjali Mehta, Third Year @ UVA (CS Engineering)
+
+Prashanth Wagle, Grad Student @ UVA (CS)
+
+[Trinity Chamblin, Second Year @ UVA (Statistics & CS)](trinitychamblin.png)
+
+# SDAD Faculty Members:
+
+Aaron Schroeder, Research Associate Professor
+
+Joel Thurston, Senior Scientist
+
+Guy Leonel SIWE, Postdoc Researcher
+
+Treena Goswami, Postdoc Researcher
+
+# Fairfax County Stakeholders:
+
+Michelle Gregory, Fairfax Countywide Data Analytics Coordinator
+
+Stephen Tarditi, Director, Market Intelligence at Fairfax County Economic
+
+Scott Sizer, Fairfax Department of Economic Initiatives

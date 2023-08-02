@@ -7,6 +7,7 @@ subtitle: "Methods"
 
 
 
+
 ## Business Owner Name
 
   The business owners' names included in our training set were evaluated using natural language processing methods. We tested among three pre-trained NLP software packages: RaceBERT, rethnicity, Ethnicolr. Each package contains tools to make predictions, given a first and/or last name. These packages use various data sources such as Wikipedia, the U.S Census, and the Florida and North Carolina voter registration database from early 2017. For the tools we applied within our first predictor, each outputs a data frame containing the probabilities that an individual would belong to a specific racial or ethnic group given both a first and last name. 

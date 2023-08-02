@@ -16,8 +16,6 @@ navbar:
       menu:
         - text: Data Discovery
           href: data-discovery.html
-        - text: Data Aggregation
-          href: data-agg.html
     - text: "Methods"
       href: methods.html
     - text: "Findings"
@@ -28,6 +26,8 @@ navbar:
           href: findings-conclusions.html
     - text: "Team"
       href: team.html
+    - text: Presentation
+      href: presentation.html
     - text: ""
       icon: fa-github
       # Change to your github repo

@@ -23,3 +23,17 @@ Another dataset that was added to our Listing was the businesses that had been f
 
 This table demonstrates that although the Mergent Intellect dataset may appear large at first, when we found only the businesses that had executive names reported, the number decreased vastly, and after finding those owner name's that also had a minority flag, the number became even smaller, merely 743 businesses. 
 
+The data from the listing had to be cross referenced with 743 companies from Mergent that were minority flagged and had executive names reported to find the places where those had overlapped. 
+
+We used fuzzy matching to cross reference the company names in Mergent intellect and the companies. 
+
+<div class="definition-box">
+
+**What is Fuzzy Matching?**  Fuzzy matching is a data analysis technique used to compare and match two names with slight differences or variations. Unlike exact matching, fuzzy matching allows for flexible comparisons, considering typographical errors and abbreviations. By applying string similarity metrics, fuzzy matching identifies potential matches and enhances data accuracy, data integrity, consistency, and reliability in research outcomes.
+</div>
+
+Overall, the number of businesses found in the listing and the Mergent minority flag was approximately 70. This clearly is a very small number compared to what we began with. The only way to mitigate this issue is to continue web scrapping and develop our listing size to be greater. 
+
+![Cross Referenced](img/crossref.png)
+
+

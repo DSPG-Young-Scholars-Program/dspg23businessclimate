@@ -12,12 +12,10 @@ navbar:
   right:
     - text: "Overview"
       href: index.html
-    - text: "Data"
-      menu:
-        - text: Data Discovery
-          href: data-discovery.html
     - text: "Methods"
       href: methods.html
+    - text: "Data"
+      href: data-discovery.html
     - text: "Findings"
       menu:
         - text: Decision Tree
@@ -27,7 +25,7 @@ navbar:
     - text: "Team"
       href: team.html
     - text: Presentation
-      href: presentation.html
+      href: dspg_dc_presentation.pdf
     - text: ""
       icon: fa-github
       # Change to your github repo

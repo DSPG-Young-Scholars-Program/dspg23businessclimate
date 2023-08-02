@@ -4,6 +4,6 @@ subtitle: "____________________"
 output: html_document
 ---
 
-[Download PowerPoint Presentation](https://myuva-my.sharepoint.com/:p:/g/personal/yhu2bk_virginia_edu/ETfuQhszwmpLmpVctl3Sg8sBo0A58ua0qMW9oiEV1mdBzg?e=kXLLFH)
+[PowerPoint Presentation](/dspg_dc_presentation.html)
 
 ![](img/ppt.png)

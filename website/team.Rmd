@@ -20,6 +20,7 @@ Anjali is a rising third year at the University of Virginia pursuing a B.S. in C
 <br>
 
 ![Prashanth Wagle](img/prashanthwagle.png){width=30%}
+
 Data Science for the Public Good Intern
 <br>
 Prashanth is a graduate student at the University of Virginia pursuing a M.S. in Computer Science.
@@ -36,6 +37,7 @@ Trinity is a rising second year at the University of Virginia pursuing a B.S. in
 ## SDAD Faculty Members:
 
 ![Aaron Schroeder](img/aaronshroeder.png){width=30%}
+
 Research Associate Professor
 <br>
 Public Policy & Administration
@@ -43,6 +45,7 @@ Public Policy & Administration
 
 
 ![Joel Thurston](img/joelthurston.png){width=30%}
+
 Senior Scientist
 <br>
 Social Psychology
@@ -50,6 +53,7 @@ Social Psychology
 
 
 ![Guy Leonel SIWE](img/leonelsiwe.png){width=30%}
+
 Postdoctoral Research Associate
 <br>
 Economics
@@ -57,6 +61,7 @@ Economics
 
 
 ![Treena Goswami](img/treenagoswami.png){width=30%}
+
 Postdoctoral Research Associate
 <br>
 Economics

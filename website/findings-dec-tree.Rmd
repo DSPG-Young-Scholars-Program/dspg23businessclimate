@@ -23,3 +23,10 @@ Using the decision tree classifier model, a GIS map of Fairfax County was create
 ![](img/postmodel.png){width=40% }
 
 
+
+testing 
+
+Because our training and testing sample was small (138 businesses), the model was trained and evaluated 10,000 times. For each sample of 138 companies, we split into a training (70%) and a test (30%) sample.
+
+After training our model, we then evaluated it’s performance of our model in classifying businesses as minority-owned or not using our testing sample.
+

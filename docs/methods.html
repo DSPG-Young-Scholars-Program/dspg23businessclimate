@@ -250,8 +250,20 @@ $(document).ready(function () {
         <li>
   <a href="index.html">Overview</a>
 </li>
-<li>
-  <a href="data.html">Data</a>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Data
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="data-discovery.html">Data Discovery</a>
+    </li>
+    <li>
+      <a href="data-agg.html">Data Aggregation</a>
+    </li>
+  </ul>
 </li>
 <li>
   <a href="methods.html">Methods</a>
@@ -264,10 +276,10 @@ $(document).ready(function () {
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="findings-overview.html">Overview</a>
+      <a href="findings-dec-tree.html">Decision Tree</a>
     </li>
     <li>
-      <a href="findings-rmd.html">Findings Rmd</a>
+      <a href="findings-conclusions.html">Conclusions</a>
     </li>
   </ul>
 </li>
@@ -275,7 +287,7 @@ $(document).ready(function () {
   <a href="team.html">Team</a>
 </li>
 <li>
-  <a href="https://github.com/DSPG-Young-Scholars-Program/dspg23_website_template">
+  <a href="https://github.com/DSPG-Young-Scholars-Program/dspg23businessclimate.git">
     <span class="fa fa-github"></span>
      
     
@@ -296,7 +308,26 @@ $(document).ready(function () {
 </div>
 
 
-
+<div id="introducing-model-predictors" class="section level3">
+<h3>Introducing Model Predictors:</h3>
+</div>
+<div id="business-owner-name" class="section level2">
+<h2>Business Owner Name</h2>
+<p>The business owners' names included in our training set were evaluated using natural language processing methods. We tested among three pre-trained NLP software packages: RaceBERT, rethnicity, Ethnicolr. Each package contains tools to make predictions, given a first and/or last name. These packages use various data sources such as Wikipedia, the U.S Census, and the Florida and North Carolina voter registration database from early 2017. For the tools we applied within our first predictor, each outputs a data frame containing the probabilities that an individual would belong to a specific racial or ethnic group given both a first and last name.</p>
+<div class="figure">
+<img src="img/nlptable.png" alt="Figure 1: Natural Language Processing Models" style="width:80.0%" />
+<p class="caption">Figure 1: Natural Language Processing Models</p>
+</div>
+<p>To promote binary classification, we simply started by applying the complementary rule to the probability of an individual being white to compute the probability that they are non-white for each name, aggregating this into two columns. Next, we created a prediction column that flags each name possessing a higher probability of being non-white (greater than 0.5) to belong to a member of a minority group. A value of 1 means an owner is predicted to be a minority and 0 if otherwise. After computing these probabilities, we accounted for the percent accuracy for each NLP tool and selected the most accurate one.</p>
+</div>
+<div id="company-name" class="section level2">
+<h2>Company Name:</h2>
+<p>We assessed the languages of the company names in our training set using natural language processing. We created a list of non-minorities spoken languages like English, French, German, etc. and identified companies where the name's language is spoken by a minority group, including Spanish, Arabic, Hindi, etc. To achieve this, we employed three software tools that utilize sources like Google translate to predict the probability of a name in English phonetically resembling a different language. Next, in coherence with the output manipulation of the NLP the same method for assigning each value a binary indicator of 1 (minority) and 0 (non-minority) was utilized as mentioned in the paragraph above.</p>
+</div>
+<div id="company-location" class="section level2">
+<h2>Company Location:</h2>
+<p>The final predictor of our model will factor in the population demographics of Fairfax County. Utilizing 2021 American Community Survey census data, we subdivided Fairfax County demographic by its 233 identifiable census tracts. Census tracts are subdivisions of counties containing approximately 4,000 people. We chose tracts as our geography level because they are stable over time, allowing for comparisons over periods of time. To allow us to weigh in the factor of demographic composition in our analysis, we used geolocation to locate the census tracts of each business given their address. By factoring in our final predictor of location demographics, we can provide a more accurate prediction of business diversity in the Fairfax County area.</p>
+</div>
 
 <hr />
 <div>

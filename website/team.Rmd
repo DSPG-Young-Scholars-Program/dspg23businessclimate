@@ -1,10 +1,73 @@
 ---
-title: "Project Title"
-subtitle: "Team"
+title: "The Team"
+subtitle: "____________________"
 ---
 
-# Mention yourselves
+### Who We Are
+#### [The Data Science for the Public Good (DSPG) Young Scholars Program](https://biocomplexity.virginia.edu/institute/divisions/social-and-decision-analytics/dspg)
+Our program is brought to you by the University of Virginia's Biocomplexity Institute's [Social and Decision Analytics Division](https://biocomplexity.virginia.edu/institute/divisions/social-and-decision-analytics) (SDAD). DSPG is a 10 week summer program for undergraduate and graduate students from across the country. DSPG Young Scholars conduct research at the intersection of statistics, computation, engineering, science and the social sciences to determine how information generated within communities and through local, state, and federal programs can be leveraged to improve quality of life and inform public policy. 
 
-# Mention the SDAD faculty
 
-# Mention your sponsors
+# Our Project Team
+## DSPG Members:
+
+![Anjali Mehta](img/anjalimehta2.png){width=30%}
+
+
+Data Science for the Public Good Intern
+<br>
+Anjali is a rising third year at the University of Virginia pursuing a B.S. in Computer Science and a minor in Data Science.
+<br>
+
+![Prashanth Wagle](img/prashanthwagle.png){width=30%}
+Data Science for the Public Good Intern
+<br>
+Prashanth is a graduate student at the University of Virginia pursuing a M.S. in Computer Science.
+<br>
+
+![Trinity Chamblin](img/trinitychamblin.png){width=30%}
+
+Data Science for the Public Good Intern
+<br>
+Trinity is a rising second year at the University of Virginia pursuing a B.S. in Statistics and a B.A. in Computer Science.
+<br>
+
+
+## SDAD Faculty Members:
+
+![Aaron Schroeder](img/aaronshroeder.png){width=30%}
+Research Associate Professor
+<br>
+Public Policy & Administration
+<br>
+
+
+![Joel Thurston](img/joelthurston.png){width=30%}
+Senior Scientist
+<br>
+Social Psychology
+<br>
+
+
+![Guy Leonel SIWE](img/leonelsiwe.png){width=30%}
+Postdoctoral Research Associate
+<br>
+Economics
+<br>
+
+
+![Treena Goswami](img/treenagoswami.png){width=30%}
+Postdoctoral Research Associate
+<br>
+Economics
+<br>
+
+
+# Thanks to our Fairfax County Stakeholders:
+
+Michelle Gregory, Fairfax Countywide Data Analytics Coordinator
+
+Stephen Tarditi, Director, Market Intelligence at Fairfax County Economic
+
+Scott Sizer, Fairfax Department of Economic Initiatives
+

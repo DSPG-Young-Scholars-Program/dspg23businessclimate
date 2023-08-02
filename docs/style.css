@@ -84,6 +84,15 @@ h3.subtitle {
   margin-bottom: 15px;
 }
 
+/* Define the style for the definition box */
+.definition-box {
+  background-color: #f0f0f0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
 h2 {
   font-size: 22px;
   text-align: center;
@@ -98,6 +107,24 @@ h2 {
   font-weight: normal;
   text-align: justify;
 }
+
+.hero-image {
+    position: relative;
+    margin-bottom: 2em;
+    /* liner gradient tints the image darker for readability*/
+    background-image: url(img/DSPGheader.png); 
+    /*linear-gradient( rgba(0,0,0,.2), rgba(0,0,0,.2) ) */
+    height: 400px;
+    background-size: cover;
+    background-color: #141c25f2;
+    background-position: center center;
+    display: flex; /* Change to `display: none` for no hero image */
+    justify-content: center;
+    align-items: center;
+}
+
+
+
 
 /* FIGURE CAPTIONS  */
 figcaption {

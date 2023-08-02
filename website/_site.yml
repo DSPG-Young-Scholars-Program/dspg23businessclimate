@@ -13,18 +13,22 @@ navbar:
     - text: "Overview"
       href: index.html
     - text: "Data"
-      href: data.html
+      menu:
+        - text: Data Discovery
+          href: data-discovery.html
     - text: "Methods"
       href: methods.html
     - text: "Findings"
       menu:
-        - text: Overview
-          href: findings-overview.html
-        - text: Findings Rmd
-          href: findings-rmd.html
+        - text: Decision Tree
+          href: findings-dec-tree.html
+        - text: Conclusions
+          href: findings-conclusions.html
     - text: "Team"
       href: team.html
+    - text: Presentation
+      href: presentation.html
     - text: ""
       icon: fa-github
       # Change to your github repo
-      href: "https://github.com/DSPG-Young-Scholars-Program/dspg23_website_template"
+      href: "https://github.com/DSPG-Young-Scholars-Program/dspg23businessclimate.git"

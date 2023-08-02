@@ -1,0 +1,39 @@
+---
+title: "Data Discovery"
+subtitle: "____________________"
+---
+
+During our data discovery phase, we found business data from the minority-focused Chamber of Commerce websites (Black, Latin, Asian, and Native American), Yelp.com, Small Business Supply Directory (SBSD), and the Axle database. 
+
+The data from the minority-focused Chamber of Commerce sites and Yelp.com were found using web scraping. T
+
+<div class="definition-box">
+
+**What is Web-Scrapping?**  Web scraping is a data extraction technique used to gather information from various websites on the internet. It involves automating the process of retrieving and parsing data from web pages, enabling the collection of large datasets quickly and efficiently.
+</div>
+
+The number of businesses found in each listing is as follows below. 
+![Listing Descriptive Stastics](img/listing_table.png)
+
+These company names were added to our 'Listing'. The Listing refers to a list of businesses that we have high confidence are minority owned. 
+
+Another dataset that was added to our Listing was the businesses that had been flagged by Mergent Intellect. 
+![Mergent Intellect Descriptive Stastics](img/MI_table.png)
+
+
+This table demonstrates that although the Mergent Intellect dataset may appear large at first, when we found only the businesses that had executive names reported, the number decreased vastly, and after finding those owner name's that also had a minority flag, the number became even smaller, merely 743 businesses. 
+
+The data from the listing had to be cross referenced with 743 companies from Mergent that were minority flagged and had executive names reported to find the places where those had overlapped. 
+
+We used fuzzy matching to cross reference the company names in Mergent intellect and the companies. 
+
+<div class="definition-box">
+
+**What is Fuzzy Matching?**  Fuzzy matching is a data analysis technique used to compare and match two names with slight differences or variations. Unlike exact matching, fuzzy matching allows for flexible comparisons, considering typographical errors and abbreviations. By applying string similarity metrics, fuzzy matching identifies potential matches and enhances data accuracy, data integrity, consistency, and reliability in research outcomes.
+</div>
+
+Overall, the number of businesses found in the listing and the Mergent minority flag was approximately 70. This clearly is a very small number compared to what we began with. The only way to mitigate this issue is to continue web scrapping and develop our listing size to be greater. 
+
+![Cross Referenced](img/crossref.png)
+
+

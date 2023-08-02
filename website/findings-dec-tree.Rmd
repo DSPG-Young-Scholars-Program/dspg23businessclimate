@@ -1,6 +1,6 @@
 ---
 title: "Decision Tree Model"
-subtitle: " "
+subtitle: "____________________"
 ---
 
 We then created the decision tree classification model to identify Mergent Intellect’s underrepresentation of minority owned businesses. 

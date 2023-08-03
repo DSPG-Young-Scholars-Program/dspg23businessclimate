@@ -14,13 +14,13 @@ The data from the minority-focused Chamber of Commerce sites and Yelp.com were f
 
 The number of businesses found in each listing is as follows below. 
 
-![Listing Descriptive Stastics](img/listing_table.png){width=70%}
+![](img/listing_table.png){width=70%}
 
 These company names were added to our 'Listing'. The Listing refers to a list of businesses that we have high confidence are minority owned. 
 
 Another dataset that was added to our Listing was the businesses that had been flagged by Mergent Intellect. 
 
-![Mergent Intellect Descriptive Stastics](img/MI_table.png){width=80%}
+![](img/MI_table.png){width=80%}
 
 
 

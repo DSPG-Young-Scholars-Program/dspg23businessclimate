@@ -3,7 +3,7 @@ title: "Methodology"
 subtitle: "____________________"
 ---
 
-![Figure 1: A Visual of our Methodology](img/methodology.png)
+![](img/methodology.png)
 
 
 

@@ -6,7 +6,7 @@ subtitle: "____________________"
 We created a decision tree classification model to identify Mergent Intellect’s underrepresentation of minority owned businesses. 
 
 A decision tree is a type of supervised machine learning used to categorize or make predictions based on how a previous set of questions were answered.The decision tree classifier specific to our model is shown below. 
-![Decision Tree Model](img/dec_classifier.png){width=80% }
+![](img/dec_classifier.png){width=80% }
 
 
 ##**Assessing the Missclassification** 
@@ -18,7 +18,7 @@ Note that although we are benchmarking our results with the 2017 Census, which r
 
 The percentages represented above are depicted in the table below for clarity.
 
-![Error Chart](img/comp_chart.png){width=80% }
+![](img/comp_chart.png){width=80% }
 
 
 ##**Evaluating the Model** 
@@ -29,7 +29,7 @@ After training our model, we then evaluated it’s performance of our model in c
 
 We computed the averages of the measures presented in the figure shown below:
 
-![Model Performance](img/evaluation.png){width=80%}
+![](img/evaluation.png){width=80%}
 
   <div class="definition-box">
 

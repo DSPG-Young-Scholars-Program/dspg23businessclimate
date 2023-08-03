@@ -11,7 +11,7 @@
 
 
 
-<title>Decision Tree Model</title>
+<title>probit-model</title>
 
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -296,44 +296,30 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Decision Tree Model</h1>
-<h3 class="subtitle"><hr /></h3>
+<h1 class="title toc-ignore">probit-model</h1>
 
 </div>
 
 
-<p>We created a decision tree classification model to identify Mergent Intellect’s underrepresentation of minority owned businesses.</p>
-<p>A decision tree is a type of supervised machine learning used to categorize or make predictions based on how a previous set of questions were answered.The decision tree classifier specific to our model is shown below. <img src="img/dec_classifier.png" alt="Figure 15: Decision Tree" style="width:80.0%" /></p>
-<div id="assessing-the-missclassification" class="section level2">
-<h2><strong>Assessing the Missclassification</strong></h2>
-<p>The error rate of Mergent was approximately 39%, and the number of businesses correctly classified as minority-owned was around 7%. We applied it to the totality of the Mergent Intellect dataset and determined that the reported error value decreased. As our focus is identifying misclassified businesses, we only applied the model to those that were not already flagged as minority owned by Mergent. We proceeded by applying the model to the non-flagged businesses and then included the businesses that were correctly listed as minority owned. By doing this, we calculated the new percentage of minority-owned businesses, which turned out to be 41.75%. Next, we assessed the error of this updated model and found it to be 22.34%, significantly lower than the initial error rate. This result indicates that our model is performing well and reducing the error in tracking minority business ownership.</p>
-<p>Note that although we are benchmarking our results with the 2017 Census, which reported 38% minority business ownership in Fairfax County, because this model is being applied to recent data, having a higher percentage of minority owned businesses is extremely plausible.</p>
-<p>The percentages represented above are depicted in the table below for clarity.</p>
+<div id="probit-model" class="section level2">
+<h2>Probit Model</h2>
+<p>The probit model is a type of statistical model used in binary classification tasks, where the outcome variable can take one of two possible values (usually coded as 0 and 1). The primary purpose of the probit model is to estimate the probability that the binary outcome occurs as a function of one or more predi ctor variables. Instead of modeling the probability directly using a linear relationship as in the logistic regression, the probit model uses the cumulative standard normal distribution (also known as the probit function) to transform the linear predictor into probabilities. The model assumes that the error ter m follows a standard normal distribution, and through the probit function, the predicted probabilities can be linked to the predictors. This makes the probit model useful in situations where the underlying relationship between predictors and probabilities may not be linear. The model is estimated using maximum likelihood estimation, and the coefficients obtained from the estimation provide insights into the impact of predictor variables on the binary outcome's probability. We then created the decision tree classification model to identify Mergent Intellect’s underrepresentation of minority owned businesses. We used several packages to estimate each predictors. For predicting the ethnicity via name, we used the ethnicolr, racebert, and rethnicity packages and for the second predictor i.e., predicting the language of the company name, we used spacy and langdetect. The third predictor was the percentage of non-minori ties in the tract area where the company is located. The results of the training the data on the probit model is as follows:-</p>
 <div class="figure">
-<img src="img/comp_chart.png" alt="Figure 16: Comparison Chart" style="width:80.0%" />
-<p class="caption">Figure 16: Comparison Chart</p>
+<img src="img/probit-results.png" alt="Probit Results" style="width:80.0%" />
+<p class="caption">Probit Results</p>
 </div>
-</div>
-<div id="evaluating-the-model" class="section level2">
-<h2><strong>Evaluating the Model</strong></h2>
-<p>Because our training and testing sample was small (only 138 businesses), the model was trained and evaluated 10,000 times. For each sample of 138 companies, we split it into a training (70%) and a test (30%) sample.</p>
-<p>After training our model, we then evaluated it’s performance of our model in classifying businesses as minority-owned or not using our testing sample.</p>
-<p>We computed the averages of the measures presented in the figure shown below:</p>
+<p>From the image above, we can interpret that the significance of the coefficients is determined by their p-values. In this model, &quot;prob_nw_rethn&quot; has a p-value of 0.0000, which means it is highly statistically significant. On the other hand, &quot;prob_nw_eth_wiki,&quot; &quot;prob_nw_rbert,&quot; &quot;prob_spacy,&quot; and &quot;prob_ld&quot; have p -values greater than 0.05, suggesting that these coefficients are not statistically significant at the 5% level.</p>
+<p>The model converged successfully, which means the estimation algorithm was able to find a solution that maximizes the likelihood function. Also, The coefficients represent the estimated effects of each predictor variable on the log-odds of the binary outcome.</p>
 <div class="figure">
-<img src="img/evaluation.png" alt="Figure 17: Model Evaluation Metrics" style="width:80.0%" />
-<p class="caption">Figure 17: Model Evaluation Metrics</p>
+<img src="img/probit-eqn.png" alt="Probit Equation" style="width:80.0%" />
+<p class="caption">Probit Equation</p>
 </div>
-<div class="definition-box">
-<p><strong>How the minority-ownership flagging works</strong></p>
-<p>-If a company is identified as minority by Mergent, we report the minority status from Mergent Intellect</p>
-<p>-If a company is listed as non-minority owned by Mergent, we report the flag from the classifier</p>
+<p>Here y_pred refers to the prediction results. x_test is the array of predictors and params refers to the array of coefficinents that we obtained from the model fitting.</p>
+<p>We extract the coeffecients in the array params, use it in the equation as shown above and predict the new results. We use this result to predict the flag i.e. {1, 0} which represents minorities and non-minorities respectively.</p>
 </div>
-</div>
-<div id="gis-map" class="section level2">
-<h2><strong>GIS Map</strong></h2>
-<p>Using the decision tree classifier model, a GIS map of Fairfax County was created. This map represents the percentage of minority-owned business per census tract. The two maps represent the number of minority owned businesses according to the Mergent Intellect database before and after the model was applied. By looking at these GIS maps, one can visualize how minority businesses are distributed across Fairfax County.</p>
-<p>These maps are not representative of all of Fairfax County because we were only able to apply the model to the 18k businesses that had executive names reported. This means that several tracts could be underrepresented.</p>
-<p><img src="img/premodel.png" alt="Figure 18: GIS Map before model was applied" style="width:40.0%" /> <img src="img/postmodel.png" alt="Figure 19: GIS Map after model was applied" style="width:40.0%" /></p>
+<div id="performance-of-the-model" class="section level1">
+<h1>Performance of the Model</h1>
+<p>Probit was less performant than the other models, and the clasifications were erratic and unstable. The average accuracy obtained after sampling and classifying on multiple iterations was 54%.</p>
 </div>
 
 <hr />

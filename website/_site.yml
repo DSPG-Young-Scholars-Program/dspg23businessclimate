@@ -20,6 +20,8 @@ navbar:
       menu:
         - text: Decision Tree
           href: findings-dec-tree.html
+        - text: Probit Model
+          href: probit-model.html
         - text: Conclusions
           href: findings-conclusions.html
     - text: "Team"

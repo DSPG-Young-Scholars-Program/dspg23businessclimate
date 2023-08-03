@@ -115,5 +115,59 @@ This project is sponsored by the [Mastercard Center for Inclusive Growth](https:
 
 ### **Sources** 
 
-These are our sources
+Decoding State-County Census Tracts versus Tribal Census Tracts: https://www.census.gov/newsroom/blogs/random-samplings/2012/07/decoding-state-county-census-tracts-versus-tribal-census-tracts.html 
 
+ 
+Yelp Business Review Company: 
+
+https://www.yelp.com/ 
+
+ 
+Mergent Intellect (MI) Database: 
+
+ https://www.mergentintellect.com/index.php/search/index 
+
+
+The Virginia Small Business Supply Directory (SBSD): 
+
+ https://sbsd.virginia.gov/ 
+
+
+Chamber of Commerce:  
+
+Hispanic: https://www.novahispanicchamber.com/ 
+
+Black: https://www.northernvirginiabcc.org/ 
+
+Asian: https://www.aabac.org/ 
+
+
+Fairfax County ACS (American Community Survey) census: 
+
+ https://www.census.gov/quickfacts/fact/table/fairfaxcountyvirginia/POP010220#POP010220 
+
+ 
+
+North Carolina Voter Registration Data (Statewide and County Level data available): https://www.ncsbe.gov/results-data/voter-registration-data 
+
+ 
+
+Natural Language Processing Documentation: 
+
+RaceBert: https://pypi.org/project/racebert/ 
+
+Rethnicity: https://www.sciencedirect.com/science/article/pii/S2352711021001874 
+
+Ethnicolr: https://ethnicolr.readthedocs.io/ethnicolr.html#install 
+
+
+SpaceY: https://spacy.io/ 
+
+LangDetect: https://pypi.org/project/langdetect/ 
+
+
+1964 Information: https://storymaps.arcgis.com/stories/f74a8fbad837435b8e901cc9c04aa345 
+
+1964 information: https://www.richmondfed.org/-/media/richmondfedorg/publications/research/econ_focus/2004/winter/pdf/economic_history.pdf 
+
+ 

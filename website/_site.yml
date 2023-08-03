@@ -20,6 +20,10 @@ navbar:
       menu:
         - text: Decision Tree
           href: findings-dec-tree.html
+        - text: Probit
+          href: probit-model.html 
+        - text: Support Vector Machines
+          href: svm.html
         - text: Conclusions
           href: findings-conclusions.html
     - text: "Team"

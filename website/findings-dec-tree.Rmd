@@ -6,7 +6,7 @@ subtitle: "____________________"
 We created a decision tree classification model to identify Mergent Intellect’s underrepresentation of minority owned businesses. 
 
 A decision tree is a type of supervised machine learning used to categorize or make predictions based on how a previous set of questions were answered.The decision tree classifier specific to our model is shown below. 
-![](img/dec_classifier.png){width=80% }
+![Figure 15: Decision Tree](img/dec_classifier.png){width=80% }
 
 
 ##**Assessing the Missclassification** 
@@ -18,7 +18,7 @@ Note that although we are benchmarking our results with the 2017 Census, which r
 
 The percentages represented above are depicted in the table below for clarity.
 
-![](img/comp_chart.png){width=80% }
+![Figure 16: Comparison Chart](img/comp_chart.png){width=80% }
 
 
 ##**Evaluating the Model** 
@@ -29,7 +29,7 @@ After training our model, we then evaluated it’s performance of our model in c
 
 We computed the averages of the measures presented in the figure shown below:
 
-![](img/evaluation.png){width=80%}
+![Figure 17: Model Evaluation Metrics](img/evaluation.png){width=80%}
 
   <div class="definition-box">
 
@@ -49,8 +49,8 @@ Using the decision tree classifier model, a GIS map of Fairfax County was create
 
 These maps are not representative of all of Fairfax County because we were only able to apply the model to the 18k businesses that had executive names reported. This means that several tracts could be underrepresented. 
 
-![](img/premodel.png){width=40% }
-![](img/postmodel.png){width=40% }
+![Figure 18: GIS Map before model was applied](img/premodel.png){width=40% }
+![Figure 19: GIS Map after model was applied](img/postmodel.png){width=40% }
 
 
 

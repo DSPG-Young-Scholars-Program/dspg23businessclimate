@@ -300,15 +300,15 @@ $(document).ready(function () {
 
 
 <p>We created a decision tree classification model to identify Mergent Intellect’s underrepresentation of minority owned businesses.</p>
-<p>A decision tree is a type of supervised machine learning used to categorize or make predictions based on how a previous set of questions were answered.The decision tree classifier specific to our model is shown below. <img src="img/dec_classifier.png" style="width:80.0%" /></p>
+<p>A decision tree is a type of supervised machine learning used to categorize or make predictions based on how a previous set of questions were answered.The decision tree classifier specific to our model is shown below. <img src="img/dec_classifier.png" alt="Figure 15: Decision Tree" style="width:80.0%" /></p>
 <div id="assessing-the-missclassification" class="section level2">
 <h2><strong>Assessing the Missclassification</strong></h2>
 <p>The error rate of Mergent was approximately 39%, and the number of businesses correctly classified as minority-owned was around 7%. We applied it to the totality of the Mergent Intellect dataset and determined that the reported error value decreased. As our focus is identifying misclassified businesses, we only applied the model to those that were not already flagged as minority owned by Mergent. We proceeded by applying the model to the non-flagged businesses and then included the businesses that were correctly listed as minority owned. By doing this, we calculated the new percentage of minority-owned businesses, which turned out to be 41.75%. Next, we assessed the error of this updated model and found it to be 22.34%, significantly lower than the initial error rate. This result indicates that our model is performing well and reducing the error in tracking minority business ownership.</p>
 <p>Note that although we are benchmarking our results with the 2017 Census, which reported 38% minority business ownership in Fairfax County, because this model is being applied to recent data, having a higher percentage of minority owned businesses is extremely plausible.</p>
 <p>The percentages represented above are depicted in the table below for clarity.</p>
 <div class="figure">
-<img src="img/comp_chart.png" style="width:80.0%" />
-
+<img src="img/comp_chart.png" alt="Figure 16: Comparison Chart" style="width:80.0%" />
+<p class="caption">Figure 16: Comparison Chart</p>
 </div>
 </div>
 <div id="evaluating-the-model" class="section level2">
@@ -317,8 +317,8 @@ $(document).ready(function () {
 <p>After training our model, we then evaluated it’s performance of our model in classifying businesses as minority-owned or not using our testing sample.</p>
 <p>We computed the averages of the measures presented in the figure shown below:</p>
 <div class="figure">
-<img src="img/evaluation.png" style="width:80.0%" />
-
+<img src="img/evaluation.png" alt="Figure 17: Model Evaluation Metrics" style="width:80.0%" />
+<p class="caption">Figure 17: Model Evaluation Metrics</p>
 </div>
 <div class="definition-box">
 <p><strong>How the minority-ownership flagging works</strong></p>
@@ -330,7 +330,7 @@ $(document).ready(function () {
 <h2><strong>GIS Map</strong></h2>
 <p>Using the decision tree classifier model, a GIS map of Fairfax County was created. This map represents the percentage of minority-owned business per census tract. The two maps represent the number of minority owned businesses according to the Mergent Intellect database before and after the model was applied. By looking at these GIS maps, one can visualize how minority businesses are distributed across Fairfax County.</p>
 <p>These maps are not representative of all of Fairfax County because we were only able to apply the model to the 18k businesses that had executive names reported. This means that several tracts could be underrepresented.</p>
-<p><img src="img/premodel.png" style="width:40.0%" /> <img src="img/postmodel.png" style="width:40.0%" /></p>
+<p><img src="img/premodel.png" alt="Figure 18: GIS Map before model was applied" style="width:40.0%" /> <img src="img/postmodel.png" alt="Figure 19: GIS Map after model was applied" style="width:40.0%" /></p>
 </div>
 
 <hr />

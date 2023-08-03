@@ -75,18 +75,17 @@ The Business Diversity project is a significant part of the [Social and Impact D
 
 </div>
 
-![Fairfax County Census Tracts](img/census.png){width=50%}
+![Figure 1: Fairfax County Census Tracts](img/census.png){width=50%}
 
   
-  Microdata enables the study of minority-owned business activities at small geography levels. Current business microdata sources do not adequately identify minority-owned businesses. A case study conducted in Fairfax County revealed that the [Annual Business Survey (ABS)](https://www.census.gov/programs-surveys/abs/about.html#:~:text=The%20Annual%20Business%20Survey%20(ABS)%20provides%20information%20on%20selected%20economic,%2C%20race%2C%20and%20veteran%20status). reported approximately 38% of minority-owned businesses in 2017. During that same period, [Mergent Intellect](https://www.epls.org/340/Mergent-Intellect#:~:text=Mergent%20Intellect%20is%20a%20flexible,to%20generate%20insightful%20business%20intelligence)., our primary datasource,  reported only 7%. Although we do not have Mergent Intellect’s methodology for identifying minority-owned businesses, our preliminary findings suggest that Mergent Intellect includes solely registered minority-owned businesses, underrepresenting those not registered. The inconsistency across these sources leads us to ask these questions
+  Microdata enables the study of minority-owned business activities at small geography levels. Current business microdata sources do not adequately identify minority-owned businesses. A case study conducted in Fairfax County revealed that the [Annual Business Survey (ABS)](https://www.census.gov/programs-surveys/abs/about.html#:~:text=The%20Annual%20Business%20Survey%20(ABS)%20provides%20information%20on%20selected%20economic,%2C%20race%2C%20and%20veteran%20status). reported approximately 38% of minority-owned businesses in 2017. During that same period, [Mergent Intellect](https://www.epls.org/340/Mergent-Intellect#:~:text=Mergent%20Intellect%20is%20a%20flexible,to%20generate%20insightful%20business%20intelligence)., our primary datasource,  reported only 7%. Although we do not have Mergent Intellect’s methodology for identifying minority-owned businesses, our preliminary findings suggest that Mergent Intellect includes solely registered minority-owned businesses, underrepresenting those not registered. The inconsistency across these sources leads us to ask this question.
   
-**Research Questions**
+  
+<div class="definition-box">
 
-- How are minority-owned businesses distributed across Fairfax County geographically?
-- How are minority-owned businesses distributed across Fairfax County by business type and by industry?
+**Motivation Question:**  How are minority-owned businesses distributed across Fairfax County geographically?
 
-The map to the left represents how Fairfax County is split into census tracts. 
-
+</div>
 
 
 
@@ -98,12 +97,13 @@ To help answer these research questions, our goal was to create a binary classif
 - The Company’s Name
 - The Company’s Location
 
-We also kept ethical considerations in mind, which is why we decided to employ a binary [classification model](https://medium.com/fuzz/machine-learning-classification-models-3040f71e2529), and not disclose any business owner's racial identifiers.  
+
+We also kept ethical considerations in mind, which is why we decided to employ a binary [classification model](https://medium.com/fuzz/machine-learning-classification-models-3040f71e2529), and not disclose any business owner's racial identifiers. This is to safeguard the model's intended application.  
 
 
 
 ### **Summary of Findings**
-We applied our final classification model to the non-flagged businesses, including the businesses that were correctly listed as minority owned. By doing this, we increased the reported percentage of minority-owned businesses for Mergent Intellect, to 48.27%.  We also reduced the error of misclassified businesses by Mergent Intellect by 12%. 
+We applied our final classification model to the non-flagged businesses. By doing this, we increased the reported percentage of minority-owned businesses for Mergent Intellect, to 41.75%.  We also reduced the error of misclassified businesses by Mergent Intellect by 12%. 
 
 
 ### **Sponsor and Stakeholders** 

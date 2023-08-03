@@ -294,105 +294,91 @@ $(document).ready(function () {
 
 
 <h1 class="title toc-ignore">Methodology</h1>
-<h3 class="subtitle"><hr /></h3>
 
 </div>
 
 
-<div class="figure">
-<img src="img/methodology.png" />
-
-</div>
+<!DOCTYPE html>
+<html>
+<head>
 <style>
-.details-summary {
-  list-style-type: none;
-  cursor: pointer;
-  background-color: #f2f2f2; /* Light Gray */
-  color: #333; /* Dark Gray */
-  border: none;
-  text-align: left;
-  padding: 10px;
-  width: 100%;
-  font-size: 18px;
-  transition: background-color 0.3s;
-}
+  /* CSS to style the table of contents */
+  .toc-container {
+    position: fixed;
+    top: 100px; /* Adjust the top position as needed */
+    left: 20px; /* Adjust the right position as needed */
+    width: 200px; /* Adjust the width as needed */
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 5px;
+  }
 
-.details-content {
-  padding: 10px;
-  border: 1px solid #f2f2f2; /* Light Gray */
-  border-top: none;
-  display: none;
-  font-size: 16px;
-}
-
-.details-summary.active {
-  background-color: #ddd; /* Slightly Darker Gray */
-}
-
-.details-summary.active + .details-content {
-  display: block;
-}
+  .toc-container a {
+    display: block;
+    margin-bottom: 5px;
+  }
 </style>
 <script>
-function toggleDetails(summary) {
-  summary.classList.toggle("active");
-}
+  // JavaScript to show/hide the table of contents based on scroll position
+  window.addEventListener('scroll', function() {
+    var tocContainer = document.querySelector('.toc-container');
+    var headerHeight = 300; // Set the height of your header in pixels
+
+    if (window.pageYOffset > headerHeight) {
+      tocContainer.style.visibility = 'visible';
+    } else {
+      tocContainer.style.visibility = 'hidden';
+    }
+  });
 </script>
-<div id="phase-1" class="section level2">
-<h2>Phase 1</h2>
-<details> <summary class="details-summary" onclick="toggleDetails(this)">Data Discovery and Aggregation</summary>
-<div class="details-content">
-<p>Our Data Discovery and Aggregation phase involved compiling a set of data sources which we have high confidence that the businesses are truly minority-owned.</p>
-<p>The main dataset we are exploring is called Mergent Intellect, which is a large dataset that has been aggregated by many different sources. This is an expansive dataset, but they have underrepresented the number of minority-owned businesses in Fairfax County.</p>
+</head>
+<body>
+</head>
+<body>
+<!-- Table of Contents -->
+<div class="toc-container">
+<h2>
+Table of Contents
+</h2>
+<ul>
+<p><a href="">Phase 1</a> <a href="#phase-2">Phase 2: Comparing Our Sources</a> <a href="#phase-3">Phase 3: Building our Training and Testing Set</a> <a href="#phase-4">Phase 4: Model Construction, Training, and Testing</a> <a href="#phase-5">Phase 5: Comparing Results</a></p>
+</ul>
 </div>
-<p></details></p>
+</body>
+</html>
+<div class="figure">
+<img src="img/methodology2.png" alt="Figure 1: A Visual of our Methodology" />
+<p class="caption">Figure 1: A Visual of our Methodology</p>
 </div>
-<div id="phase-2" class="section level2">
-<h2>Phase 2</h2>
-<details> <summary class="details-summary" onclick="toggleDetails(this)">Comparing Our Sources</summary>
-<div class="details-content">
+<div id="phase-2-comparing-our-sources" class="section level3">
+<h3><strong>Phase 2: Comparing Our Sources</strong></h3>
 <p>After our data discovery phase, we overlapped Mergent Intellect businesses and our business listing to verify our main hypothesis that Mergent Intellect has flagged some companies as non-minority owned while they have been reported from outside sources as minority owned. Therefore, we obtained a rough estimate of the underrepresentation made by Mergent Intellect in flagging minority-owned businesses and non-minority owned businesses.</p>
 </div>
-<p></details></p>
-</div>
-<div id="phase-3" class="section level2">
-<h2>Phase 3</h2>
-<p><details> <summary class="details-summary">Building our Training and Testing Set</summary></p>
-<p>We built our balanced training sample for modeling by sub-setting crossrefrenced Mergent Intellect businesses with a list of businesses for which we have high confidence in the classification as minority or not depending on whether they are listed as such in the outside sources found in our Data Discovery phase.</p>
-<p>The term ‘Listed’ and ‘Not Listed’ is used as a proxy for minority owned and non-minority owned respectively inorder to reduce bias. This bias could exist because although we have high confidence that Listed businesses are minority-owned, we do not have confidence that businesses Not-Listed are not minority-owned.</p>
-<p>We the Proceeded to build our training and testing sample with these two steps:</p>
+<div id="phase-3-building-our-training-and-testing-set" class="section level3">
+<h3><strong>Phase 3: Building our Training and Testing Set</strong></h3>
+<p>Second, we built our balanced training sample for modeling by sub-setting crossrefrenced Mergent Intellect businesses with a list of businesses for which we have high confidence in the classification as minority or not depending on whether they are listed as such in the outside sources found in our Data Discovery phase.</p>
+<p>The term ‘Listed’ and ‘Not Listed’ is used as a proxy for minority owned and non-minority owned respectively inorder to reduce bias. This bias could exist because although we have high confidence that businesses in the Listing are minority-owned, we do not have confidence that businesses not in the Listing are not minority-owned.</p>
+<p>We the Proceeded to Build our training and testing sample with these two steps:</p>
 <ol style="list-style-type: decimal">
-<li><p>We sampled the businesses among those reported as minority owned by Mergent Intellect that were crossrefrenced with businesses listed in our outside sources. Given both the report of Mergent Intellect’s minority-owned tag and the tag of our outside source, <strong>we have confidence about this sample being comprised of minority owned businesses</strong>.</p></li>
-<li><p>Because the list of non-minority owned businesses reported by Mergent Intellect contains both minority and non-minority-owned businesses, we can’t use a sample of that list to identify non-minority owned businesses. As this would be a source of bias.</p></li>
+<li><p>We sampled the businesses among those reported by Mergent as minority owned that were crossrefrenced with businesses listed in our outside sources. Given both the report of Mergent Intellect’s minority-owned tag and the tag of our outside source, we have confidence about this sample being comprised of minority owned businesses.</p></li>
+<li><p>Because the list of non-minority owned businesses reported by Mergent Intellect contains both minority and non-minority-owned businesses, we can’t use a sample of that list to identify non-minority owned businesses. We propose to use the founding year as a filter to identify non-minority owned businesses. The intuition of this filter consists of saying that before the Civil Rights Act of 1964, which prohibits discrimination based on race, color, religion, sex or national origin, only a few minority businesses existed. Therefore, businesses founded before 1964 are more likely to be non-minority owned. [source here containing info to back this up] (Note: This filtering doesn’t exactly identify non-minority owned businesses but reduces the error from sampling non-minority which are effectively minority-owned businesses. In addition, this approach introduces additional assumptions such as the owner has remained the same since the foundation. Our final sample comprises 216 businesses. we compiled a list of businesses founded before 1964. This is because the Civil Rights Act was implemented in 1964; businesses established before this date are more likely to be non-minority owned. According to <a href="https://storymaps.arcgis.com/stories/f74a8fbad837435b8e901cc9c04aa345">Census Data</a>, the population of non-minorities in Fairfax County in 1964 was approximately 90%, as opposed to around 50% in 2017. After finding the unique businesses labelled as ‘Listed’, we extracted the same number of businesses classified as ‘Not Listed.’</p></li>
 </ol>
-<p>We used the founding year as a filter to identify non-minority owned businesses. We only selected businesses that were founded prior to 1964 because they are more likely to be non-minority owned.</p>
-<div class="definition-box">
-<p><strong>Why is the year 1964 selected as the cutoff?</strong> Because prior to the <a href="https://www.dol.gov/agencies/oasam/civil-rights-center/statutes/civil-rights-act-of-1964">Civil Rights Act of 1964</a> (which prohibits discrimination based on race, color, religion, sex or national origin) only a few minority businesses existed. Also, According to <a href="https://storymaps.arcgis.com/stories/f74a8fbad837435b8e901cc9c04aa345">Census Data</a>, the population of non-minorities in Fairfax County in 1964 was approximately 90%, as opposed to around 50% in 2017.</p>
+<p>The way our training set was created is shown below. <img src="img/training2.png" alt="Training Set" /></p>
 </div>
-<p>This is not a perfect solution. It does not entirely remove the bias, it only lessens it. It also introduces another possible source of bias, which is the possibility of the owner changing.</p>
-<p>Our final sample comprises 138 businesses. After finding the unique businesses labelled as ‘Not Listed’, we extracted the same number of businesses classified as ‘Listed’ by randomly sampling from the subset of 813 companies.</p>
-<p>A visualization of the way our training set was created is shown below. <img src="img/training2.png" alt="Training Set" /></p>
-<p></details></p>
-</div>
-<div id="phase-4" class="section level2">
-<h2>Phase 4</h2>
-<p><details> <summary class="details-summary">4.1 Introducing Our Predictors</summary></p>
-<p>For ethical purposes, our model employs the binary classification of minority owned or non-minority owned among businesses. Business executives’ racial identifiers are not disclosed to maintain this research’s intended application.</p>
-<div class="definition-box">
-<p><strong>What are the predictors for our model?</strong></p>
-<ol style="list-style-type: decimal">
-<li><p>Business executive names</p></li>
-<li><p>The language that a company’s name is written</p></li>
-<li>The proportion of non-minority individuals at the business's location</li>
-</ol>
-</div>
+<div id="phase-4-model-construction-training-and-testing" class="section level2">
+<h2><strong>Phase 4: Model Construction, Training, and Testing</strong></h2>
+<div id="introducing-our-predictors" class="section level3">
+<h3>Introducing Our Predictors</h3>
+<p>For ethical purposes, our model employs the binary classification of minority owned or non-minority owned among businesses. Business executives’ racial identifiers are not disclosed to maintain this research’s intended application.We look at business executive names as our first predictor, existing research on name analysis suggests that names with distinct cultural or ethnic backgrounds are often associated with minority individuals. As our second predictor, we chose to evaluate the language that a company’s name is written in as another helpful indicator of the company owner’s minority status. Lastly, our third predictor is the population demographics at the business’ locations.</p>
 <div class="figure">
 <img src="img/model_predictors.png" alt="Figure 3: Describing Model Predictors" style="width:80.0%" />
 <p class="caption">Figure 3: Describing Model Predictors</p>
 </div>
-<p></details></p>
-<p><details> <summary class="details-summary">4.1.1 Predicting Race Using Executive's Names</summary></p>
-<p>We decided to use business' executives names as our first predictor because existing research on name analysis suggests that names with distinct cultural or ethnic backgrounds are often associated with minority individuals. The business executive names included in our training set were evaluated using natural language processing (NLP) methods. We tested out three pre-trained NLP software packages: RaceBERT, rethnicity, Ethnicolr. Each package contains tools to make predictions, given a first and/or last name. These packages use various data sources such as Wikipedia, the U.S Census, and the Florida and North Carolina voter registration database from early 2017. We found that out of the models we found, RaceBERT and rethnicity were the most efficient. We then applied these tools as our first predictor, where each tool outputs a data frame containing the probabilities that an individual would belong to a specific racial or ethnic group given both a first and last name.</p>
+</div>
+</div>
+<div id="predicting-race-using-executives-names" class="section level2">
+<h2>Predicting Race using Executives’ Names</h2>
+<p>The business executive names included in our training set were evaluated using natural language processing (NLP) methods. We tested out three pre-trained NLP software packages: RaceBERT, rethnicity, Ethnicolr. Each package contains tools to make predictions, given a first and/or last name. These packages use various data sources such as Wikipedia, the U.S Census, and the Florida and North Carolina voter registration database from early 2017. We found that out of the models we found, RaceBERT and rethnicity were the most efficient. We then applied these tools as our first predictor, where each tool outputs a data frame containing the probabilities that an individual would belong to a specific racial or ethnic group given both a first and last name.</p>
 <div class="figure">
 <img src="img/nlptable2.png" alt="Figure 4: Natural Language Processing Models using Executives’ Names" style="width:80.0%" />
 <p class="caption">Figure 4: Natural Language Processing Models using Executives’ Names</p>
@@ -400,16 +386,18 @@ function toggleDetails(summary) {
 <p>To promote binary classification, we simply started by applying the complementary rule to the probability of an individual being white to compute the probability that they are non-white for each name, aggregating this into two columns. Next, we created a prediction column that flags each name possessing a higher probability of being non-white (greater than 0.5) to belong to a member of a minority group. A value of 1 means an owner is predicted to be a minority and 0 if otherwise.</p>
 <p>To visualize the distribution and confirm the accuracy of RaceBERT’s (Figure 5) and rethnnicity’s (Figure 6) predictions, a box plot was constructed. The box plot presents the probability scores of names classified as minority (1) and those classified as non-minorities (0). This analysis aimed to ensure that names labeled as minority businesses consistently exhibited high probabilities, and that the average probability for minority names was higher than that for non-minority names.</p>
 <p><img src="img/raceB_box.png" alt="Figure 5:RaceBERT" style="width:40.0%" /> <img src="img/rethn_box.png" alt="Figure 6: rethnicity" style="width:40.0%" /></p>
-<p></details></p>
-<p><details> <summary class="details-summary"> 4.1.2 Company Name</summary></p>
-<p>We assessed the languages of the company names in our training set using natural language processing because names that phoentically sound like a minority-spoken language have a higher likelihood of belonging to a minority-owner. We created a list of non-minorities spoken languages like English, French, German, etc. and identified companies where the name’s language is spoken by a minority group, including Spanish, Arabic, Hindi, etc. To achieve this, we employed two software tools that utilize sources like Google translate to predict the probability of a name in English phonetically resembling a different language. These tools were LangDetect (Figure 7) and SpaceY (Figure 6) Next, in coherence with the output manipulation of the NLP the same method for assigning each value a binary indicator of 1 (minority) and 0 (non-minority) was utilized as mentioned in the paragraph above.</p>
-<p><img src="img/ld_box.png" alt="Figure 7: LangDetect" style="width:40.0%" /> <img src="img/prob_spacy.png" alt="Figure 6: SpaceY" style="width:40.0%" /></p>
-<p></details></p>
-<p><details> <summary class="details-summary">4.1.2 Company Location</summary></p>
-<p>The final predictor of our model will factor in the population demographics of Fairfax County. Utilizing 2021 American Community Survey census data, we subdivided Fairfax County demographic by its 233 identifiable census tracts. Census tracts are subdivisions of counties containing approximately 4,000 people. We chose tracts as our geography level because they are stable over time, allowing for comparisons over periods of time. To allow us to weigh in the factor of demographic composition in our analysis, we used geolocation to locate the census tracts of each business given their address. We found the proportion of nonwhite individuals at each specific census tract that the business owner resides in.</p>
-<p></details></p>
-<p><details> <summary class="details-summary">4.2 Model Evaluation</summary></p>
-<p>Our training set was split up, and 30% of it was subsetted into the testing set. The model was run 10,000 times to produce evaluation metrics of the model.</p>
+</div>
+<div id="company-name" class="section level2">
+<h2>Company Name:</h2>
+<p>We assessed the languages of the company names in our training set using natural language processing. We created a list of non-minorities spoken languages like English, French, German, etc. and identified companies where the name’s language is spoken by a minority group, including Spanish, Arabic, Hindi, etc. To achieve this, we employed three software tools that utilize sources like Google translate to predict the probability of a name in English phonetically resembling a different language. Next, in coherence with the output manipulation of the NLP the same method for assigning each value a binary indicator of 1 (minority) and 0 (non-minority) was utilized as mentioned in the paragraph above. boxplot</p>
+</div>
+<div id="company-location" class="section level2">
+<h2>Company Location:</h2>
+<p>The final predictor of our model will factor in the population demographics of Fairfax County. Utilizing 2021 American Community Survey census data, we subdivided Fairfax County demographic by its 233 identifiable census tracts. Census tracts are subdivisions of counties containing approximately 4,000 people. We chose tracts as our geography level because they are stable over time, allowing for comparisons over periods of time. To allow us to weigh in the factor of demographic composition in our analysis, we used geolocation to locate the census tracts of each business given their address. By factoring in our final predictor of location demographics, we can provide a more accurate prediction of business diversity in the Fairfax County area.</p>
+<div id="model-evaluation" class="section level3">
+<h3>Model Evaluation</h3>
+<p>Because our training an testing sample was small (216 businesses), the model was trained and evaluated 10,000 times. For each sample of 216 companies, we split into a training (70%) and a test (30%) sample.</p>
+<p>After training our model, we then evaluated it’s performance of our model in classifying businesses as minority-owned or not using our testing sample.</p>
 <p>A confusion matrix can evaluate the performance of classification arguments. A true positive (TP) represents the number of properly classified abstracts as big data. A true negative (TN) represents the number of correctly classified abstracts that are not related to big data. A false positive (FP) represents the number of misclassified documents as being big data that are actually not related to big data. Finally, a false negative (FN) represents the number of abstracts misclassified as not being related to big data when it is about big data.</p>
 <div class="figure">
 <img src="img/confusionmatrix.png" alt="Figure 7: Confusion Matrix, Graphic Source" style="width:80.0%" />
@@ -420,16 +408,23 @@ function toggleDetails(summary) {
 <img src="img/metricformulas.png" alt="Figure 8: Evaluation Metric Formulas, Graphic Source" style="width:80.0%" />
 <p class="caption">Figure 8: Evaluation Metric Formulas, <a href="https://www.tutorialexample.com/an-introduction-to-accuracy-precision-recall-f1-score-in-machine-learning-machine-learning-tutorial/">Graphic Source</a></p>
 </div>
-<p></details></p>
-<p><details> <summary class="details-summary">4.3 Model Application</summary></p>
-<p>We predicted the minority status of businesses reported in the overlap of Mergent Intellect and the listing. Therefore, we estimate the proportion of businesses flagged as non-minority by Mergent Intellect, for which both the model and outside sources flagged as minority owned. This process allows us to estimate how the model has reduced the error made by Mergent Intellect in flagging minority-owned businesses and non-minority owned businesses.</p>
-<p></details></p>
+<p>We computed the averages of the measures presented in Figur 8 shown below:</p>
+<div class="figure">
+<img src="img/evaluation.png" alt="Figure 9: Model Performance" style="width:80.0%" />
+<p class="caption">Figure 9: Model Performance</p>
 </div>
-<div id="phase-5" class="section level2">
-<h2>Phase 5</h2>
-<p><details> <summary class="details-summary">Comparing Results</summary></p>
+</div>
+<div id="model-application" class="section level3">
+<h3>Model Application</h3>
+<p>We predicted the minority status of businesses reported in the overlap of Mergent Intellect and the listing. Therefore, we estimate the proportion of businesses flagged as non-minority by Mergent Intellect, for which both the model and outside sources flagged as minority owned. This process allows us to estimate how the model has reduced the error made by Mergent Intellect in flagging minority-owned businesses and non-minority owned businesses.</p>
+<p>Note:</p>
+<p>-If a company is identified as minority by Mergent, we report the minority status from Mergent Intellect</p>
+<p>-If a company is listed as non-minority owned by Mergent, we report the flag from the classifier</p>
+</div>
+<div id="phase-5-comparing-results" class="section level3">
+<h3><strong>Phase 5: Comparing Results</strong></h3>
 <p>Finally, after applying our model on the businesses from Mergent Intellect we compared the percentage of minority-owned businesses with the ABS (Annual Business Survey), a source that our stakeholders want as a benchmark. (Note: We understand with only access to 2017 ABS data the percentage of minority-owned businesses would have changed as we are using data in the research past this timeline)</p>
-<p></details></p>
+</div>
 </div>
 
 <hr />

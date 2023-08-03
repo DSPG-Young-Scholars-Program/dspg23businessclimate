@@ -5,7 +5,7 @@ subtitle: "____________________"
 
 During our data discovery phase, we found business data from the minority-focused Chamber of Commerce websites (Black, Latin, Asian, and Native American), Yelp.com, Small Business Supply Directory (SBSD), and the Axle database. 
 
-The data from the minority-focused Chamber of Commerce sites and Yelp.com were found using web scraping. T
+The data from the minority-focused Chamber of Commerce sites and Yelp.com were found using web scraping.
 
 <div class="definition-box">
 

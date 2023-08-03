@@ -11,7 +11,7 @@
 
 
 
-<title>Data Discovery</title>
+<title>Data Discovery and Aggregation</title>
 
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -293,7 +293,7 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Data Discovery</h1>
+<h1 class="title toc-ignore">Data Discovery and Aggregation</h1>
 <h3 class="subtitle"><hr /></h3>
 
 </div>
@@ -304,9 +304,17 @@ $(document).ready(function () {
 <div class="definition-box">
 <p><strong>What is Web-Scrapping?</strong> Web scraping is a data extraction technique used to gather information from various websites on the internet. It involves automating the process of retrieving and parsing data from web pages, enabling the collection of large datasets quickly and efficiently.</p>
 </div>
-<p>The number of businesses found in each listing is as follows below. <img src="img/listing_table.png" alt="Listing Descriptive Stastics" /></p>
+<p>The number of businesses found in each listing is as follows below.</p>
+<div class="figure">
+<img src="img/listing_table.png" alt="Listing Descriptive Stastics" style="width:70.0%" />
+<p class="caption">Listing Descriptive Stastics</p>
+</div>
 <p>These company names were added to our 'Listing'. The Listing refers to a list of businesses that we have high confidence are minority owned.</p>
-<p>Another dataset that was added to our Listing was the businesses that had been flagged by Mergent Intellect. <img src="img/MI_table.png" alt="Mergent Intellect Descriptive Stastics" /></p>
+<p>Another dataset that was added to our Listing was the businesses that had been flagged by Mergent Intellect.</p>
+<div class="figure">
+<img src="img/MI_table.png" alt="Mergent Intellect Descriptive Stastics" style="width:80.0%" />
+<p class="caption">Mergent Intellect Descriptive Stastics</p>
+</div>
 <p>This table demonstrates that although the Mergent Intellect dataset may appear large at first, when we found only the businesses that had executive names reported, the number decreased vastly, and after finding those owner name's that also had a minority flag, the number became even smaller, merely 743 businesses.</p>
 <p>The data from the listing had to be cross referenced with 743 companies from Mergent that were minority flagged and had executive names reported to find the places where those had overlapped.</p>
 <p>We used fuzzy matching to cross reference the company names in Mergent intellect and the companies.</p>
@@ -314,9 +322,11 @@ $(document).ready(function () {
 <p><strong>What is Fuzzy Matching?</strong> Fuzzy matching is a data analysis technique used to compare and match two names with slight differences or variations. Unlike exact matching, fuzzy matching allows for flexible comparisons, considering typographical errors and abbreviations. By applying string similarity metrics, fuzzy matching identifies potential matches and enhances data accuracy, data integrity, consistency, and reliability in research outcomes.</p>
 </div>
 <p>Overall, the number of businesses found in the listing and the Mergent minority flag was approximately 70. This clearly is a very small number compared to what we began with. The only way to mitigate this issue is to continue web scrapping and develop our listing size to be greater.</p>
-<div class="figure">
-<img src="img/crossref.png" alt="Cross Referenced" />
-<p class="caption">Cross Referenced</p>
+<div id="mergent-intellects-missclassification" class="section level2">
+<h2><strong>Mergent Intellect's Missclassification</strong></h2>
+<p>As mentioned before, the issue with the Mergent Intellect data is that it underrepresents the number of minority businesses. This is also evident because a certain number of businesses in Mergent Intellect have been missclassified. We know this because these businesses have been found in the additional data sources. The table below represents this misclassification.</p>
+<p><img src="img/error_table.png" style="width:80.0%" /> <img src="img/calculation.png" style="width:40.0%" /></p>
+<p>The percentage of businesses that were missclassified in the Mergent Intellect data is 39.47%.</p>
 </div>
 
 <hr />

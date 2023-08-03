@@ -3,7 +3,7 @@ title: "Conclusions"
 subtitle: "____________________"
 ---
 
-### **Implications*
+### **Implications**
 
 With our model we predicted that as of today, 41.75 % of Fairfax County Businesess are Minority Owned. We hope that with this model, community programs and policymakers across the entire National Capital Region can foster healthier and more diverse business climates within their communities by using accurate information to help encourage initiatives for underserved businesses. These improvements would not only help better our economy but promote representation for underserved groups and prioritize inclusion for all.
 

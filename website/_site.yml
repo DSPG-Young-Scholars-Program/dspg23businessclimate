@@ -22,6 +22,8 @@ navbar:
       menu:
         - text: Decision Tree
           href: findings-dec-tree.html
+        - text: Support Vector Machine
+          href: svm.html
         - text: Conclusions
           href: findings-conclusions.html
     - text: "Team"

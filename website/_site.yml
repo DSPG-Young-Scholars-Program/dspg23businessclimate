@@ -22,7 +22,7 @@ navbar:
           href: findings-dec-tree.html
         - text: Probit
           href: probit-model.html 
-        - text: Support Vector Machines
+        - text: Support Vector Machine
           href: svm.html
         - text: Conclusions
           href: findings-conclusions.html

@@ -1,5 +1,5 @@
 ---
-title: "probit-model"
+title: "Probit"
 output: html_document
 ---
 

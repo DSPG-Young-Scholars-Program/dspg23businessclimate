@@ -109,7 +109,7 @@ We applied our final classification model to the non-flagged businesses. By doin
 ### **Sponsor and Stakeholders** 
 
 ![Fairfax County](img/ffxcounty.png)
-![Mastercard](img/mastercard.png)
+![Mastercard](img/mastercard.png){width=60% }
 
 This project is sponsored by the [Mastercard Center for Inclusive Growth](https://www.mastercardcenter.org/) and the stakeholders are the [Fairfax County Government Economic Development Authority](https://www.fairfaxcountyeda.org/). This is one portion of the greater Data Commons project which aims to build an open knowledge repository. 
 

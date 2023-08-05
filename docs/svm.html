@@ -270,7 +270,7 @@ $(document).ready(function () {
       <a href="probit-model.html">Probit</a>
     </li>
     <li>
-      <a href="svm.html">Support Vector Machine</a>
+      <a href="svm.html">Support Vector Machines</a>
     </li>
     <li>
       <a href="findings-conclusions.html">Conclusions</a>
@@ -306,7 +306,7 @@ $(document).ready(function () {
 
 <div id="support-vector-machines" class="section level2">
 <h2>Support Vector Machines</h2>
-<p>Support Vector Machine (SVM) is a powerful supervised machine learning algorithm used for classification and regression tasks. It belongs to the family of discriminative classifiers and works by finding the optimal hyperplane that maximizes the margin between different classes in the feature space. SVM is particularly effective when dealing with high-dimensional data, and it can handle both linearly separable and non-linearly separable datasets.</p>
+<p>Support Vector Machines (SVM) is a powerful supervised machine learning algorithm used for classification and regression tasks. It belongs to the family of discriminative classifiers and works by finding the optimal hyperplane that maximizes the margin between different classes in the feature space. SVM is particularly effective when dealing with high-dimensional data, and it can handle both linearly separable and non-linearly separable datasets.</p>
 <p>One of the key strengths of SVM lies in its ability to use different types of kernels to transform the data into higher-dimensional feature spaces, allowing it to learn complex decision boundaries. The most commonly used kernels are Linear Kernel, Polynomial Kernel, Radial Basis Function Kernel and Sigmoid Kernel.</p>
 <p>In our analysis, we experimented with different SVM models, each employing a different kernel type. After careful evaluation of performance and classification of non-monority companies flagged by mergent, we found that the SVM model with a linear kernel and regularization parameter (C) set to 1 performed exceptionally well for our dataset. The linear SVM provided a decision boundary that effectively separated the classes in the feature space, and the regularization parameter helped to control overfitting, resulting in a more robust and accurate model for our classification task when compared with other kernels</p>
 </div>

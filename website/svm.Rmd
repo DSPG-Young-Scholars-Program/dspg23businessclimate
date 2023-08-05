@@ -4,7 +4,7 @@ output: html_document
 ---
 
 ## Support Vector Machines
-Support Vector Machine (SVM) is a powerful supervised machine learning algorithm used for classification and regression tasks. It belongs to the family of discriminative classifiers and works by finding the optimal hyperplane that maximizes the margin between different classes in the feature space. SVM is particularly effective when dealing with high-dimensional data, and it can handle both linearly separable and non-linearly separable datasets.
+Support Vector Machines (SVM) is a powerful supervised machine learning algorithm used for classification and regression tasks. It belongs to the family of discriminative classifiers and works by finding the optimal hyperplane that maximizes the margin between different classes in the feature space. SVM is particularly effective when dealing with high-dimensional data, and it can handle both linearly separable and non-linearly separable datasets.
 
 One of the key strengths of SVM lies in its ability to use different types of kernels to transform the data into higher-dimensional feature spaces, allowing it to learn complex decision boundaries. The most commonly used kernels are Linear Kernel, Polynomial Kernel, Radial Basis Function Kernel and Sigmoid Kernel.
 

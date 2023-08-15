@@ -70,13 +70,13 @@ After our data discovery phase, we overlapped Mergent Intellect businesses and o
 <details>
 <summary class="details-summary">Building our Training and Testing Set</summary>
 
-We built our balanced training sample for modeling by sub-setting crossrefrenced Mergent Intellect businesses with a list of businesses for which we have high confidence in the minority classification (depending on whether they are listed as such in the outside sources found in our Data Discovery phase).
+We built our balanced training sample for modeling by sub-setting cross-referenced Mergent Intellect businesses with a list of businesses for which we have high confidence in the minority classification (depending on whether they are listed as such in the outside sources found in our Data Discovery phase).
 
 The term ‘Listed’ and ‘Not Listed’ is used as a proxy for minority owned and non-minority owned respectively in order to reduce bias. **This bias could exist because although we have high confidence that Listed businesses are minority-owned, we do not have confidence that businesses Not-Listed are not minority-owned**.
 
 We the Ppoceeded to build our training and testing sample with these two steps:
 
-1. We sampled the businesses among those reported as minority owned by Mergent Intellect that were crossrefrenced with businesses listed in our outside sources. Given both the report of Mergent Intellect’s minority-owned tag and the tag of our outside source, **we have confidence about this set being comprised of minority owned businesses**.
+1. We sampled the businesses among those reported as minority owned by Mergent Intellect that were cross-referenced with businesses listed in our outside sources. Given both the report of Mergent Intellect’s minority-owned tag and the tag of our outside source, **we have confidence about this set being comprised of minority owned businesses**.
 
 2.  Because the list of non-minority owned businesses reported by Mergent Intellect contains both minority and non-minority-owned businesses, we can’t use a sample of that list to identify non-minority owned businesses, as this would be a source of bias. 
 
@@ -144,7 +144,7 @@ To visualize the distribution and confirm the accuracy of RaceBERT’s (Figure 6
 <details>
 <summary class="details-summary"> 4.1.2 Company Name</summary>
 
-   We assessed the languages of the company names in our training set using natural language processing because names that phoentically sound like a minority-spoken language have a higher likelihood of belonging to a minority-owner. We created a list of non-minorities spoken languages like English, French, German, etc. and identified companies where the name’s language is spoken by a minority group, including Spanish, Arabic, Hindi, etc. To achieve this, we employed two software tools that utilize sources like Google translate to predict the probability of a name in English phonetically resembling a different language. These tools were LangDetect (Figure 8) and SpaceY (Figure 9) Next, the same method for assigning each value a binary indicator of 1 (minority) and 0 (non-minority) was utilized as mentioned in the paragraph above.
+   We assessed the languages of the company names in our training set using natural language processing because names that phonetically sound like a minority-spoken language have a higher likelihood of belonging to a minority-owner. We created a list of non-minorities spoken languages like English, French, German, etc. and identified companies where the name’s language is spoken by a minority group, including Spanish, Arabic, Hindi, etc. To achieve this, we employed two software tools that utilize sources like Google translate to predict the probability of a name in English phonetically resembling a different language. These tools were LangDetect (Figure 8) and SpaceY (Figure 9) Next, the same method for assigning each value a binary indicator of 1 (minority) and 0 (non-minority) was utilized as mentioned in the paragraph above.
 
 ![Figure 8: LangDetect](img/ld_box.png){width=40%} ![Figure 9: SpaceY](img/prob_spacy.png){width=40%}
 

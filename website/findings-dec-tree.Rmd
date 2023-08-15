@@ -9,7 +9,7 @@ A decision tree is a type of supervised machine learning used to categorize or m
 ![Figure 15: Decision Tree](img/dec_classifier.png){width=80% }
 
 
-##**Assessing the Missclassification** 
+##**Assessing the Misclassification** 
 
 The error rate of Mergent was approximately 39%, and the number of businesses correctly classified as minority-owned was around 7%. We applied it to the totality of the Mergent Intellect dataset and determined that the reported error value decreased. As our focus is identifying misclassified businesses, we only applied the model to those that were not already flagged as minority owned by Mergent. We proceeded by applying the model to the non-flagged businesses and then included the businesses that were correctly listed as minority owned. By doing this, we calculated the new percentage of minority-owned businesses, which turned out to be 41.75%. Next, we assessed the error of this updated model and found it to be 22.34%, significantly lower than the initial error rate. This result indicates that our model is performing well and reducing the error in tracking minority business ownership. 
 

@@ -37,12 +37,12 @@ We used fuzzy matching to cross reference the company names in Mergent intellect
 
 Overall, the number of businesses found in the listing and the Mergent minority flag was approximately 70. This clearly is a very small number compared to what we began with. The only way to mitigate this issue is to continue web scrapping and develop our listing size to be greater. 
 
-##**Mergent Intellect's Missclassification** 
+##**Mergent Intellect's Misclassification** 
 
-As mentioned before, the issue with the Mergent Intellect data is that it underrepresents the number of minority businesses. This is also evident because a certain number of businesses in Mergent Intellect have been missclassified. We know this because these businesses have been found in the additional data sources. The table below represents this misclassification. 
+As mentioned before, the issue with the Mergent Intellect data is that it underrepresents the number of minority businesses. This is also evident because a certain number of businesses in Mergent Intellect have been misclassified We know this because these businesses have been found in the additional data sources. The table below represents this misclassification. 
 
 ![Figure 14: Misclassification Table](img/error_table.png){width=80%} ![](img/calculation.png){width=30%}
 
 
-The percentage of businesses that were missclassified in the Mergent Intellect data is 39.47%. 
+The percentage of businesses that were misclassified in the Mergent Intellect data is 39.47%. 
 
